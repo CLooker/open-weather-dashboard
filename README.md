@@ -14,7 +14,7 @@ Then type `npm run test` or `yarn run test`.
 
 I created this project in a few days at the behest of a job posting. The summary of what was requested is as follows:
 
-Use <a href="https://openweathermap.org/api" target="blank">the open weather API</a> to create a React dashboard.
+Use <a href="https://openweathermap.org/api" target="_blank">the open weather API</a> to create a React dashboard.
 
 The user wants to be able to view some weather for Rome, Italy. Specifically, the user wants to be able to view:
 
