@@ -9,3 +9,21 @@ Then type `npm start` or `yarn start`. That will open the app in a browswer wind
 If you haven't already, navigate to your installing directory and type `npm install` or `yarn`;
 
 Then type `npm run test` or `yarn run test`.
+
+# Context
+
+I created this project in a few days at the behest of a job posting. The summary of what was requested is as follows:
+
+Use [the open weather API](https://openweathermap.org/api 'Open Weather API') to create a React dashboard.
+
+The user wants to be able to view some weather for Rome, Italy. Specifically, the user wants to be able to view:
+
+1. The current forecast.
+
+2. A summary of the five day forecast.
+
+3. An air quality report.
+
+4. The ability to create a weather alert when the temperature exceeds a certain temperature, as well as the ability to receive information that an alert has been triggered.
+
+5. The ability to switch between Celsius and Fahrenheit.
