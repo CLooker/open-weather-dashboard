@@ -1,0 +1,168 @@
+img {
+  width: 50px;
+  height: 50px;
+}
+
+.component-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-and-quality-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.unit-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.current-weather-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.weather * {
+  padding: 20px;
+}
+
+.forecast * {
+  padding: 10px;
+}
+
+.weather-and-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.five-day-forecast {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgrey;
+  margin: 15px 0 15px;
+  border-radius: 10px;
+}
+
+.forecast {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.forecast-list div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} 
+
+.air-quality-report-container {
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.air-quality-report > div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chem-container {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pollutant-stats {
+  margin: 10px;
+}
+
+.weather-alert-container {
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.weather-alert-container-title-icon {
+  display: flex; 
+  justify-content: center;
+}
+
+.weather-alert-container-title-icon h3 {
+  text-align: center;
+}
+
+.alert-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.create-weather-alert-container {
+  margin-right: 15px;
+}
+
+.create-weather-alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.create-weather-alert-title-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-weather-alert-title-icon img {
+  width: 25px;
+  height: 25px;
+}
+
+.create-weather-alert form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.create-weather-alert form div {
+  display: flex;
+}
+
+.create-weather-alert form input:last-child {
+  margin-top: 10px;
+}
+
+.get-weather-alerts {
+  margin-right: 5px;
+}
+
+.unit-switcher input {
+  width: 50px;
+}

@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GetWeatherAlerts initialization should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GetWeatherAlerts
+    registeredAlerts={0}
+    triggeredAlerts={Array []}
+    updateRegisteredAlerts={[MockFunction]}
+    updateTriggeredAlerts={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h6>
+          Registered Alerts: 
+          0
+        </h6>,
+        <h6>
+          Triggered Alerts: 
+          0
+        </h6>,
+      ],
+      "className": "get-weather-alerts",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Registered Alerts: ",
+            0,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Registered Alerts: ",
+          0,
+        ],
+        "type": "h6",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Triggered Alerts: ",
+            0,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Triggered Alerts: ",
+          0,
+        ],
+        "type": "h6",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h6>
+            Registered Alerts: 
+            0
+          </h6>,
+          <h6>
+            Triggered Alerts: 
+            0
+          </h6>,
+        ],
+        "className": "get-weather-alerts",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Registered Alerts: ",
+              0,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Registered Alerts: ",
+            0,
+          ],
+          "type": "h6",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Triggered Alerts: ",
+              0,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Triggered Alerts: ",
+            0,
+          ],
+          "type": "h6",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;
