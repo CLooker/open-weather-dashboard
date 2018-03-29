@@ -4,6 +4,8 @@
 
 # Quickstart
 
+If you prefer to run the project locally, clone the repository.
+
 In your favorite shell, navigate to your installation directory and type `npm install` or `yarn`;
 
 Then type `npm start` or `yarn start`. That will open the app in a browswer window.
