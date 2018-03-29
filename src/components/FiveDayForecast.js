@@ -168,7 +168,7 @@ export default class FiveDayForecast extends Component {
                       <br />
                       <div>
                         <img
-                          src={`http://openweathermap.org/img/w/${icon}.png`}
+                          src={`https://openweathermap.org/img/w/${icon}.png`}
                           alt="weather"
                         />
                         {weather}
@@ -201,7 +201,7 @@ export default class FiveDayForecast extends Component {
                       <br />
                       <div>
                         <img
-                          src={`http://openweathermap.org/img/w/03d.png`}
+                          src={`https://openweathermap.org/img/w/03d.png`}
                           alt="cloudiness"
                         />
                         {clouds.toFixed()}%

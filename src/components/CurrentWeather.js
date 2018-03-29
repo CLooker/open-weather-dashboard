@@ -73,7 +73,7 @@ export default class CurrentWeather extends Component {
               <div className="weather" style={{ display: 'flex' }}>
                 <div className="weather-and-icon">
                   <img
-                    src={`http://openweathermap.org/img/w/${iconCode}.png`}
+                    src={`https://openweathermap.org/img/w/${iconCode}.png`}
                     alt="Icon depicting current weather"
                   />
                   <h3>{weather}</h3>
@@ -97,7 +97,7 @@ export default class CurrentWeather extends Component {
                 <div>
                   {' '}
                   <img
-                    src={`http://openweathermap.org/img/w/03d.png`}
+                    src={`https://openweathermap.org/img/w/03d.png`}
                     alt="cloudiness"
                   />
                   <h3>{clouds}%</h3>

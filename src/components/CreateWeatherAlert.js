@@ -60,7 +60,7 @@ export default class CreateWeatherAlert extends Component {
         message: ''
       });
       fetch(
-        `http://api.openweathermap.org/data/3.0/triggers?&APPID=${apiKey}`,
+        `https://api.openweathermap.org/data/3.0/triggers?&APPID=${apiKey}`,
         {
           method: 'POST',
           headers: {
