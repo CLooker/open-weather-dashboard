@@ -2,6 +2,7 @@
   "name": "open-weather-dashboard",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://clooker.github.io/open-weather-dashboard",
   "dependencies": {
     "enzyme-adapter-react-16": "^1.1.1",
     "moment": "^2.21.0",
@@ -14,12 +15,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --watchAll",
     "test:coverage": "jest --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "yarn run build&&gh-pages -d build"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "enzyme": "^3.3.0",
+    "gh-pages": "^1.1.0",
     "jest": "^22.4.3",
     "jest-cli": "^22.4.3",
     "jest-enzyme": "^6.0.0",

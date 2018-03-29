@@ -16,7 +16,7 @@ export default class GetWeatherAlerts extends Component {
   fetchAlerts() {
     const { updateRegisteredAlerts, updateTriggeredAlerts } = this.props;
 
-    fetch(`http://api.openweathermap.org/data/3.0/triggers?&APPID=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/3.0/triggers?&APPID=${apiKey}`)
       .then(res => res.json())
       .then(res => {
         updateRegisteredAlerts(res);

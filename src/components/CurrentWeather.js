@@ -27,7 +27,7 @@ export default class CurrentWeather extends Component {
   // by componentDidMount
   fetchData(units) {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=Rome&units=${this.returnUnitsString(
+      `https://api.openweathermap.org/data/2.5/weather?q=Rome&units=${this.returnUnitsString(
         units
       )}&APPID=${apiKey}`
     )

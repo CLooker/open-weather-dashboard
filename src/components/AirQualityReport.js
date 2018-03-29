@@ -20,7 +20,7 @@ export default class AirQualityReport extends Component {
   componentDidMount() {
     Object.keys(this.state).forEach(key => {
       fetch(
-        `http://api.openweathermap.org/pollution/v1/${key}/41,12/current.json?appid=${apiKey}`
+        `https://api.openweathermap.org/pollution/v1/${key}/41,12/current.json?appid=${apiKey}`
       )
         .then(res => res.json())
         .then(

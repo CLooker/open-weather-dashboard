@@ -50,7 +50,7 @@ export default class FiveDayForecast extends Component {
   // by componentDidMount
   fetchData(units) {
     fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?id=6539761&units=${this.returnUnitsString(
+      `https://api.openweathermap.org/data/2.5/forecast?id=6539761&units=${this.returnUnitsString(
         units
       )}&APPID=${apiKey}`
     )
