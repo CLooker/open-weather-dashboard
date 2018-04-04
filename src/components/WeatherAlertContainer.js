@@ -29,10 +29,7 @@ export default class WeatherAlertContainer extends Component {
     return (
       <div className="weather-alert-container">
         <div className="weather-alert-container-title-icon">
-          <img
-            src="https://cloudcheckr.com/wp-content/uploads/2015/12/alert.jpg"
-            alt="alert"
-          />
+          <img src={require('../assets/alert.jpg')} alt="alert" />
           <h3>Weather Alerts</h3>
         </div>
         <div className="alert-container">

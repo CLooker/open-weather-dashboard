@@ -10,9 +10,6 @@ export default class GetWeatherAlerts extends Component {
     updateTriggeredAlerts: PropTypes.func.isRequired
   };
 
-  // place on the prototype
-  // so we can spy that it's invoked
-  // by componentDidMount
   fetchAlerts() {
     const { updateRegisteredAlerts, updateTriggeredAlerts } = this.props;
 
