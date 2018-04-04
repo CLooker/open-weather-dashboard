@@ -166,7 +166,6 @@ export default class FiveDayForecast extends Component {
                       <p>
                         <strong>{day}</strong>
                       </p>
-                      <br />
                       <div className="forecast-weather-container">
                         <img
                           src={`https://openweathermap.org/img/w/${icon}.png`}

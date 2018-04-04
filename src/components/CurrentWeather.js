@@ -76,38 +76,37 @@ export default class CurrentWeather extends Component {
                     src={`https://openweathermap.org/img/w/${iconCode}.png`}
                     alt="Icon depicting current weather"
                   />
-                  <h3>{weather}</h3>
+                  <h4>{weather}</h4>
                 </div>
                 <div>
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVYTeX-IT8VF_M7yQQsClU2CQEJTXgoi8T9jaGhB66jpLWQSw"
                     alt="temperature"
                   />
-                  <h3>
+                  <h4>
                     {temp.toFixed(1)} &deg;{this.props.units}
-                  </h3>
+                  </h4>
                 </div>
                 <div>
                   <img
                     src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLHQKHJiUm02mysUrvH8vaKDY-myNAYfRHCUFJgA-LSiNeOKn-`}
                     alt="wind"
                   />
-                  <h3>{wind} mph</h3>
+                  <h4>{wind} mph</h4>
                 </div>
                 <div>
-                  {' '}
                   <img
                     src={`https://openweathermap.org/img/w/03d.png`}
                     alt="cloudiness"
                   />
-                  <h3>{clouds}%</h3>
+                  <h4>{clouds}%</h4>
                 </div>
                 <div>
                   <img
                     src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe31uwyEa-r1R6ntqu4QPim6J6QQsIPqIrZ1RyEYebzC5esPGc`}
                     alt="barometric pressure"
                   />
-                  <h3>{pressure} hpa</h3>
+                  <h4>{pressure} hpa</h4>
                 </div>
               </div>
             </div>
