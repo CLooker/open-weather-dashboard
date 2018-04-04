@@ -52,7 +52,7 @@ img {
 }
 
 .weather * {
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .forecast {
@@ -201,4 +201,11 @@ div.forecast-list p {
 
 div.forecast-list img {
   padding: 0 5px 0 0;
+}
+
+div.weather div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
