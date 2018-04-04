@@ -6,12 +6,18 @@ const PollutantStats = ({ type, chem }) => {
     case 'so2':
       return (
         <div key={type} className="pollutant-stats">
+          <strong>{type.toUpperCase()}</strong>
           <div>
-            <strong>{type.toUpperCase()}</strong>
+            <span>
+              <h5>Value:</h5> <p>{chem.value}</p>
+            </span>
+            <span>
+              <h5>Pressure:</h5> <p>{chem.pressure} hPa</p>
+            </span>
+            <span>
+              <h5>Precision:</h5> <p>{chem.precision}</p>
+            </span>
           </div>
-          <div>Value: {chem.value}</div>
-          <div>Pressure: {chem.pressure} hPa </div>
-          <div>Precision: {chem.precision}</div>
         </div>
       );
     case 'o3':

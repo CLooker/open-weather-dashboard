@@ -123,6 +123,11 @@ img {
   margin: 10px;
 }
 
+.pollutant-stats * {
+  display: flex;
+  align-items: center;
+}
+
 .weather-alert-container {
   border: solid 1px lightgrey;
   border-radius: 10px;
@@ -216,4 +221,39 @@ div.weather div {
 .five-day-forecast-title {
   margin: 20px 0 -1px;
   padding: 0 0 10px;
+}
+
+.pollutant-stats-info {
+  display: flex;
+}
+
+.pollutant-stats h5 {
+  margin-right: 5px;
+}
+
+.pollutant-stats p {
+  font-size: 15px;
+}
+
+.pollutant-stats div {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.pollutant-stats * {
+  margin: 0;
+  padding: 0;
+}
+
+.create-weather-alert-title-icon p {
+  font-size: 15px;
+}
+
+.get-weather-alerts p {
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
