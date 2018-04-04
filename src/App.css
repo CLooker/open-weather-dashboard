@@ -1,10 +1,6 @@
 body {
-  min-width: 850px;
-  overflow: auto;
+  min-width: 1000px;
   margin: 0 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 ul {
@@ -58,8 +54,22 @@ img {
   padding: 20px;
 }
 
+.forecast {
+  display: flex;
+  justify-content: center;
+}
+
 .forecast * {
-  padding: 10px;
+  min-width: 20px;
+}
+
+.forecast-list > p:first-child {
+  min-width: 200px;
+}
+
+.forecast-list {
+  display: flex;
+  flex-direction: column;
 }
 
 .weather-and-icon {
@@ -82,12 +92,13 @@ img {
 .forecast {
   list-style-type: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 .forecast-list div {
   display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 
@@ -178,4 +189,11 @@ img {
 
 .unit-switcher input {
   width: 50px;
+}
+
+div.forecast-list,
+div.forecast-list p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

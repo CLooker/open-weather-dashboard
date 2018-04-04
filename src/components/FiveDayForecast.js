@@ -45,9 +45,6 @@ export default class FiveDayForecast extends Component {
       pressure: d.pressure.reduce((total, n) => total + n) / d.pressure.length
     }));
 
-  // place on the prototype
-  // so we can spy that it's invoked
-  // by componentDidMount
   fetchData(units) {
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?id=6539761&units=${this.returnUnitsString(
@@ -164,14 +161,16 @@ export default class FiveDayForecast extends Component {
                 return (
                   <li key={day}>
                     <div className="forecast-list">
-                      <strong>{day}</strong>
+                      <p>
+                        <strong>{day}</strong>
+                      </p>
                       <br />
                       <div>
                         <img
                           src={`https://openweathermap.org/img/w/${icon}.png`}
                           alt="weather"
                         />
-                        {weather}
+                        <p>{weather}</p>
                       </div>
                       <div>
                         <img
