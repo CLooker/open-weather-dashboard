@@ -24,7 +24,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 20px;
+  margin: -10px 0 10px 0;
 }
 
 .unit-switcher {
@@ -103,6 +103,7 @@ img {
   border: solid 1px lightgrey;
   border-radius: 10px;
   margin: 10px;
+  padding: 15px 0 0;
 }
 
 .air-quality-report > div:first-child {
@@ -131,6 +132,7 @@ img {
 .weather-alert-container-title-icon {
   display: flex;
   justify-content: center;
+  padding: 15px 0 0;
 }
 
 .weather-alert-container-title-icon h3 {
