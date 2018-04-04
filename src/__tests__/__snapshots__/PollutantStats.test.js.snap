@@ -27,23 +27,38 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <strong>
+          CO
+        </strong>,
         <div>
-          <strong>
-            CO
-          </strong>
-        </div>,
-        <div>
-          Value: 
-          100
-        </div>,
-        <div>
-          Pressure: 
-          1000
-           hPa 
-        </div>,
-        <div>
-          Precision: 
-          32924
+          <span>
+            <h5>
+              Value:
+            </h5>
+             
+            <p>
+              100
+            </p>
+          </span>
+          <span>
+            <h5>
+              Pressure:
+            </h5>
+             
+            <p>
+              1000
+               hPa
+            </p>
+          </span>
+          <span>
+            <h5>
+              Precision:
+            </h5>
+             
+            <p>
+              32924
+            </p>
+          </span>
         </div>,
       ],
       "className": "pollutant-stats",
@@ -55,74 +70,186 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <strong>
-            CO
-          </strong>,
+          "children": "CO",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "CO",
+        "rendered": "CO",
+        "type": "strong",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span>
+              <h5>
+                Value:
+              </h5>
+               
+              <p>
+                100
+              </p>
+            </span>,
+            <span>
+              <h5>
+                Pressure:
+              </h5>
+               
+              <p>
+                1000
+                 hPa
+              </p>
+            </span>,
+            <span>
+              <h5>
+                Precision:
+              </h5>
+               
+              <p>
+                32924
+              </p>
+            </span>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h5>
+                  Value:
+                </h5>,
+                " ",
+                <p>
+                  100
+                </p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Value:",
+                },
+                "ref": null,
+                "rendered": "Value:",
+                "type": "h5",
+              },
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 100,
+                },
+                "ref": null,
+                "rendered": 100,
+                "type": "p",
+              },
+            ],
+            "type": "span",
           },
-          "ref": null,
-          "rendered": "CO",
-          "type": "strong",
-        },
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Value: ",
-            100,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Value: ",
-          100,
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Pressure: ",
-            1000,
-            " hPa ",
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Pressure: ",
-          1000,
-          " hPa ",
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Precision: ",
-            32924,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Precision: ",
-          32924,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h5>
+                  Pressure:
+                </h5>,
+                " ",
+                <p>
+                  1000
+                   hPa
+                </p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Pressure:",
+                },
+                "ref": null,
+                "rendered": "Pressure:",
+                "type": "h5",
+              },
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    1000,
+                    " hPa",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  1000,
+                  " hPa",
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h5>
+                  Precision:
+                </h5>,
+                " ",
+                <p>
+                  32924
+                </p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Precision:",
+                },
+                "ref": null,
+                "rendered": "Precision:",
+                "type": "h5",
+              },
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 32924,
+                },
+                "ref": null,
+                "rendered": 32924,
+                "type": "p",
+              },
+            ],
+            "type": "span",
+          },
         ],
         "type": "div",
       },
@@ -136,23 +263,38 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <strong>
+            CO
+          </strong>,
           <div>
-            <strong>
-              CO
-            </strong>
-          </div>,
-          <div>
-            Value: 
-            100
-          </div>,
-          <div>
-            Pressure: 
-            1000
-             hPa 
-          </div>,
-          <div>
-            Precision: 
-            32924
+            <span>
+              <h5>
+                Value:
+              </h5>
+               
+              <p>
+                100
+              </p>
+            </span>
+            <span>
+              <h5>
+                Pressure:
+              </h5>
+               
+              <p>
+                1000
+                 hPa
+              </p>
+            </span>
+            <span>
+              <h5>
+                Precision:
+              </h5>
+               
+              <p>
+                32924
+              </p>
+            </span>
           </div>,
         ],
         "className": "pollutant-stats",
@@ -164,74 +306,186 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <strong>
-              CO
-            </strong>,
+            "children": "CO",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "CO",
+          "rendered": "CO",
+          "type": "strong",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                <h5>
+                  Value:
+                </h5>
+                 
+                <p>
+                  100
+                </p>
+              </span>,
+              <span>
+                <h5>
+                  Pressure:
+                </h5>
+                 
+                <p>
+                  1000
+                   hPa
+                </p>
+              </span>,
+              <span>
+                <h5>
+                  Precision:
+                </h5>
+                 
+                <p>
+                  32924
+                </p>
+              </span>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h5>
+                    Value:
+                  </h5>,
+                  " ",
+                  <p>
+                    100
+                  </p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Value:",
+                  },
+                  "ref": null,
+                  "rendered": "Value:",
+                  "type": "h5",
+                },
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": 100,
+                  },
+                  "ref": null,
+                  "rendered": 100,
+                  "type": "p",
+                },
+              ],
+              "type": "span",
             },
-            "ref": null,
-            "rendered": "CO",
-            "type": "strong",
-          },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Value: ",
-              100,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Value: ",
-            100,
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Pressure: ",
-              1000,
-              " hPa ",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Pressure: ",
-            1000,
-            " hPa ",
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Precision: ",
-              32924,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Precision: ",
-            32924,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h5>
+                    Pressure:
+                  </h5>,
+                  " ",
+                  <p>
+                    1000
+                     hPa
+                  </p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Pressure:",
+                  },
+                  "ref": null,
+                  "rendered": "Pressure:",
+                  "type": "h5",
+                },
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      1000,
+                      " hPa",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    1000,
+                    " hPa",
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h5>
+                    Precision:
+                  </h5>,
+                  " ",
+                  <p>
+                    32924
+                  </p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Precision:",
+                  },
+                  "ref": null,
+                  "rendered": "Precision:",
+                  "type": "h5",
+                },
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": 32924,
+                  },
+                  "ref": null,
+                  "rendered": 32924,
+                  "type": "p",
+                },
+              ],
+              "type": "span",
+            },
           ],
           "type": "div",
         },
@@ -277,23 +531,38 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <strong>
+          SO2
+        </strong>,
         <div>
-          <strong>
-            SO2
-          </strong>
-        </div>,
-        <div>
-          Value: 
-          132
-        </div>,
-        <div>
-          Pressure: 
-          2000
-           hPa 
-        </div>,
-        <div>
-          Precision: 
-          23234
+          <span>
+            <h5>
+              Value:
+            </h5>
+             
+            <p>
+              132
+            </p>
+          </span>
+          <span>
+            <h5>
+              Pressure:
+            </h5>
+             
+            <p>
+              2000
+               hPa
+            </p>
+          </span>
+          <span>
+            <h5>
+              Precision:
+            </h5>
+             
+            <p>
+              23234
+            </p>
+          </span>
         </div>,
       ],
       "className": "pollutant-stats",
@@ -305,74 +574,186 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <strong>
-            SO2
-          </strong>,
+          "children": "SO2",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "SO2",
+        "rendered": "SO2",
+        "type": "strong",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span>
+              <h5>
+                Value:
+              </h5>
+               
+              <p>
+                132
+              </p>
+            </span>,
+            <span>
+              <h5>
+                Pressure:
+              </h5>
+               
+              <p>
+                2000
+                 hPa
+              </p>
+            </span>,
+            <span>
+              <h5>
+                Precision:
+              </h5>
+               
+              <p>
+                23234
+              </p>
+            </span>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h5>
+                  Value:
+                </h5>,
+                " ",
+                <p>
+                  132
+                </p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Value:",
+                },
+                "ref": null,
+                "rendered": "Value:",
+                "type": "h5",
+              },
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 132,
+                },
+                "ref": null,
+                "rendered": 132,
+                "type": "p",
+              },
+            ],
+            "type": "span",
           },
-          "ref": null,
-          "rendered": "SO2",
-          "type": "strong",
-        },
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Value: ",
-            132,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Value: ",
-          132,
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Pressure: ",
-            2000,
-            " hPa ",
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Pressure: ",
-          2000,
-          " hPa ",
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Precision: ",
-            23234,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Precision: ",
-          23234,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h5>
+                  Pressure:
+                </h5>,
+                " ",
+                <p>
+                  2000
+                   hPa
+                </p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Pressure:",
+                },
+                "ref": null,
+                "rendered": "Pressure:",
+                "type": "h5",
+              },
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    2000,
+                    " hPa",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  2000,
+                  " hPa",
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h5>
+                  Precision:
+                </h5>,
+                " ",
+                <p>
+                  23234
+                </p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Precision:",
+                },
+                "ref": null,
+                "rendered": "Precision:",
+                "type": "h5",
+              },
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 23234,
+                },
+                "ref": null,
+                "rendered": 23234,
+                "type": "p",
+              },
+            ],
+            "type": "span",
+          },
         ],
         "type": "div",
       },
@@ -386,23 +767,38 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <strong>
+            SO2
+          </strong>,
           <div>
-            <strong>
-              SO2
-            </strong>
-          </div>,
-          <div>
-            Value: 
-            132
-          </div>,
-          <div>
-            Pressure: 
-            2000
-             hPa 
-          </div>,
-          <div>
-            Precision: 
-            23234
+            <span>
+              <h5>
+                Value:
+              </h5>
+               
+              <p>
+                132
+              </p>
+            </span>
+            <span>
+              <h5>
+                Pressure:
+              </h5>
+               
+              <p>
+                2000
+                 hPa
+              </p>
+            </span>
+            <span>
+              <h5>
+                Precision:
+              </h5>
+               
+              <p>
+                23234
+              </p>
+            </span>
           </div>,
         ],
         "className": "pollutant-stats",
@@ -414,74 +810,186 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <strong>
-              SO2
-            </strong>,
+            "children": "SO2",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "SO2",
+          "rendered": "SO2",
+          "type": "strong",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                <h5>
+                  Value:
+                </h5>
+                 
+                <p>
+                  132
+                </p>
+              </span>,
+              <span>
+                <h5>
+                  Pressure:
+                </h5>
+                 
+                <p>
+                  2000
+                   hPa
+                </p>
+              </span>,
+              <span>
+                <h5>
+                  Precision:
+                </h5>
+                 
+                <p>
+                  23234
+                </p>
+              </span>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h5>
+                    Value:
+                  </h5>,
+                  " ",
+                  <p>
+                    132
+                  </p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Value:",
+                  },
+                  "ref": null,
+                  "rendered": "Value:",
+                  "type": "h5",
+                },
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": 132,
+                  },
+                  "ref": null,
+                  "rendered": 132,
+                  "type": "p",
+                },
+              ],
+              "type": "span",
             },
-            "ref": null,
-            "rendered": "SO2",
-            "type": "strong",
-          },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Value: ",
-              132,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Value: ",
-            132,
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Pressure: ",
-              2000,
-              " hPa ",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Pressure: ",
-            2000,
-            " hPa ",
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Precision: ",
-              23234,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Precision: ",
-            23234,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h5>
+                    Pressure:
+                  </h5>,
+                  " ",
+                  <p>
+                    2000
+                     hPa
+                  </p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Pressure:",
+                  },
+                  "ref": null,
+                  "rendered": "Pressure:",
+                  "type": "h5",
+                },
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      2000,
+                      " hPa",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    2000,
+                    " hPa",
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h5>
+                    Precision:
+                  </h5>,
+                  " ",
+                  <p>
+                    23234
+                  </p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Precision:",
+                  },
+                  "ref": null,
+                  "rendered": "Precision:",
+                  "type": "h5",
+                },
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": 23234,
+                  },
+                  "ref": null,
+                  "rendered": 23234,
+                  "type": "p",
+                },
+              ],
+              "type": "span",
+            },
           ],
           "type": "div",
         },
