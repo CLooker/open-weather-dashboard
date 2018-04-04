@@ -145,7 +145,9 @@ export default class FiveDayForecast extends Component {
           <Loading />
         ) : (
           <div className="five-day-forecast">
-            <h3> Forecast in {this.props.name} </h3>
+            <h3 className="five-day-forecast-title">
+              Forecast in {this.props.name}{' '}
+            </h3>
             <ul className="forecast">
               {this.state.forecast.map(f => {
                 const {

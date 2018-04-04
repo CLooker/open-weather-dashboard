@@ -209,3 +209,8 @@ div.weather div {
   justify-content: center;
   align-items: center;
 }
+
+.five-day-forecast-title {
+  margin: 20px 0 -1px;
+  padding: 0 0 10px;
+}
