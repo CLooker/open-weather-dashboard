@@ -6,9 +6,7 @@ import apiKey from '../api';
 export default class AirQualityReport extends Component {
   state = {
     co: {},
-    o3: {},
-    so2: {},
-    no2: {}
+    so2: {}
   };
 
   isThereAnyLocalInfo = () =>

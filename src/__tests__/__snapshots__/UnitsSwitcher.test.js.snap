@@ -26,21 +26,21 @@ ShallowWrapper {
           onClick={[Function]}
           style={
             Object {
-              "opacity": ".5",
-            }
-          }
-          type="button"
-          value="°C"
-        />
-        <input
-          onClick={[Function]}
-          style={
-            Object {
               "opacity": "1",
             }
           }
           type="button"
           value="°F"
+        />
+        <input
+          onClick={[Function]}
+          style={
+            Object {
+              "opacity": ".5",
+            }
+          }
+          type="button"
+          value="°C"
         />
       </div>,
       "className": "unit-switcher",
@@ -56,21 +56,21 @@ ShallowWrapper {
             onClick={[Function]}
             style={
               Object {
-                "opacity": ".5",
-              }
-            }
-            type="button"
-            value="°C"
-          />,
-          <input
-            onClick={[Function]}
-            style={
-              Object {
                 "opacity": "1",
               }
             }
             type="button"
             value="°F"
+          />,
+          <input
+            onClick={[Function]}
+            style={
+              Object {
+                "opacity": ".5",
+              }
+            }
+            type="button"
+            value="°C"
           />,
         ],
       },
@@ -83,10 +83,10 @@ ShallowWrapper {
           "props": Object {
             "onClick": [Function],
             "style": Object {
-              "opacity": ".5",
+              "opacity": "1",
             },
             "type": "button",
-            "value": "°C",
+            "value": "°F",
           },
           "ref": null,
           "rendered": null,
@@ -99,10 +99,10 @@ ShallowWrapper {
           "props": Object {
             "onClick": [Function],
             "style": Object {
-              "opacity": "1",
+              "opacity": ".5",
             },
             "type": "button",
-            "value": "°F",
+            "value": "°C",
           },
           "ref": null,
           "rendered": null,
@@ -124,21 +124,21 @@ ShallowWrapper {
             onClick={[Function]}
             style={
               Object {
-                "opacity": ".5",
-              }
-            }
-            type="button"
-            value="°C"
-          />
-          <input
-            onClick={[Function]}
-            style={
-              Object {
                 "opacity": "1",
               }
             }
             type="button"
             value="°F"
+          />
+          <input
+            onClick={[Function]}
+            style={
+              Object {
+                "opacity": ".5",
+              }
+            }
+            type="button"
+            value="°C"
           />
         </div>,
         "className": "unit-switcher",
@@ -154,21 +154,21 @@ ShallowWrapper {
               onClick={[Function]}
               style={
                 Object {
-                  "opacity": ".5",
-                }
-              }
-              type="button"
-              value="°C"
-            />,
-            <input
-              onClick={[Function]}
-              style={
-                Object {
                   "opacity": "1",
                 }
               }
               type="button"
               value="°F"
+            />,
+            <input
+              onClick={[Function]}
+              style={
+                Object {
+                  "opacity": ".5",
+                }
+              }
+              type="button"
+              value="°C"
             />,
           ],
         },
@@ -181,10 +181,10 @@ ShallowWrapper {
             "props": Object {
               "onClick": [Function],
               "style": Object {
-                "opacity": ".5",
+                "opacity": "1",
               },
               "type": "button",
-              "value": "°C",
+              "value": "°F",
             },
             "ref": null,
             "rendered": null,
@@ -197,10 +197,10 @@ ShallowWrapper {
             "props": Object {
               "onClick": [Function],
               "style": Object {
-                "opacity": "1",
+                "opacity": ".5",
               },
               "type": "button",
-              "value": "°F",
+              "value": "°C",
             },
             "ref": null,
             "rendered": null,

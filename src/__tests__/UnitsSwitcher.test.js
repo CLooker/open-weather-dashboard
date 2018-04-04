@@ -31,10 +31,10 @@ describe('UnitsSwitcher', () => {
 
     describe('input style based on `units`', () => {
       describe('input style when `units` is "F"', () => {
-        test('that the first input has the correct style', () => {
+        test('that the second input has the correct style', () => {
           const actual = mountedComponent
             .find('div input')
-            .first()
+            .last()
             .props().style;
           const expected = {
             opacity: '.5'
@@ -42,10 +42,10 @@ describe('UnitsSwitcher', () => {
           expect(actual).toEqual(expect.objectContaining(expected));
         });
 
-        test('that the second input has the correct style', () => {
+        test('that the first input has the correct style', () => {
           const actual = mountedComponent
             .find('div input')
-            .last()
+            .first()
             .props().style;
           const expected = {
             opacity: '1'
@@ -67,7 +67,7 @@ describe('UnitsSwitcher', () => {
             .first()
             .props().style;
           const expected = {
-            opacity: '1'
+            opacity: '.5'
           };
           expect(actual).toEqual(expect.objectContaining(expected));
         });
@@ -78,7 +78,7 @@ describe('UnitsSwitcher', () => {
             .last()
             .props().style;
           const expected = {
-            opacity: '.5'
+            opacity: '1'
           };
           expect(actual).toEqual(expect.objectContaining(expected));
         });

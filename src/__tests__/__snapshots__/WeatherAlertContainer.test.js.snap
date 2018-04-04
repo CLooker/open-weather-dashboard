@@ -23,7 +23,7 @@ ShallowWrapper {
         >
           <img
             alt="alert"
-            src="https://cloudcheckr.com/wp-content/uploads/2015/12/alert.jpg"
+            src="alert.jpg"
           />
           <h3>
             Weather Alerts
@@ -55,7 +55,7 @@ ShallowWrapper {
           "children": Array [
             <img
               alt="alert"
-              src="https://cloudcheckr.com/wp-content/uploads/2015/12/alert.jpg"
+              src="alert.jpg"
             />,
             <h3>
               Weather Alerts
@@ -71,7 +71,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "alt": "alert",
-              "src": "https://cloudcheckr.com/wp-content/uploads/2015/12/alert.jpg",
+              "src": "alert.jpg",
             },
             "ref": null,
             "rendered": null,
@@ -154,7 +154,7 @@ ShallowWrapper {
           >
             <img
               alt="alert"
-              src="https://cloudcheckr.com/wp-content/uploads/2015/12/alert.jpg"
+              src="alert.jpg"
             />
             <h3>
               Weather Alerts
@@ -186,7 +186,7 @@ ShallowWrapper {
             "children": Array [
               <img
                 alt="alert"
-                src="https://cloudcheckr.com/wp-content/uploads/2015/12/alert.jpg"
+                src="alert.jpg"
               />,
               <h3>
                 Weather Alerts
@@ -202,7 +202,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "alt": "alert",
-                "src": "https://cloudcheckr.com/wp-content/uploads/2015/12/alert.jpg",
+                "src": "alert.jpg",
               },
               "ref": null,
               "rendered": null,

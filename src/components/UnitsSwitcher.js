@@ -17,17 +17,17 @@ export default class UnitsSwitcher extends Component {
         <div>
           <input
             type="button"
-            value="&deg;C"
+            value="&deg;F"
             style={{
-              opacity: units === 'F' ? '.5' : '1'
+              opacity: units === 'C' ? '.5' : '1'
             }}
             onClick={this.handleClick}
           />
           <input
             type="button"
-            value="&deg;F"
+            value="&deg;C"
             style={{
-              opacity: units === 'C' ? '.5' : '1'
+              opacity: units === 'F' ? '.5' : '1'
             }}
             onClick={this.handleClick}
           />

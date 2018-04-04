@@ -165,19 +165,22 @@ export default class FiveDayForecast extends Component {
                         <strong>{day}</strong>
                       </p>
                       <br />
-                      <div>
+                      <div className="forecast-weather-container">
                         <img
                           src={`https://openweathermap.org/img/w/${icon}.png`}
                           alt="weather"
                         />
                         <p>{weather}</p>
                       </div>
+                      <br />
                       <div>
                         <img
                           src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVYTeX-IT8VF_M7yQQsClU2CQEJTXgoi8T9jaGhB66jpLWQSw`}
                           alt="high temperature"
                         />
-                        {highs.toFixed(1)} &deg;{this.props.units}
+                        <p>
+                          {highs.toFixed(1)} &deg;{this.props.units}
+                        </p>
                       </div>
                       <br />
                       <div>
@@ -185,17 +188,17 @@ export default class FiveDayForecast extends Component {
                           src={`https://lh3.googleusercontent.com/umbUE_DTWWiYad0I1ZB38WcSBFSLzSYYgKSJwTdHnjHHpuTMfvMoGHEiv4iPolyY-A=w300`}
                           alt="low temperature"
                         />
-                        {lows.toFixed(1)} &deg;{this.props.units}
+                        <p>
+                          {lows.toFixed(1)} &deg;{this.props.units}
+                        </p>
                       </div>
-                      <br />
-
                       <br />
                       <div>
                         <img
                           src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLHQKHJiUm02mysUrvH8vaKDY-myNAYfRHCUFJgA-LSiNeOKn-`}
                           alt="wind"
                         />
-                        {wind} m/ph
+                        <p>{wind} m/ph</p>
                       </div>
                       <br />
                       <div>
@@ -203,7 +206,7 @@ export default class FiveDayForecast extends Component {
                           src={`https://openweathermap.org/img/w/03d.png`}
                           alt="cloudiness"
                         />
-                        {clouds.toFixed()}%
+                        <p>{clouds.toFixed()}%</p>
                       </div>
                       <br />
                       <div>
@@ -211,7 +214,7 @@ export default class FiveDayForecast extends Component {
                           src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe31uwyEa-r1R6ntqu4QPim6J6QQsIPqIrZ1RyEYebzC5esPGc`}
                           alt="barometric pressure"
                         />
-                        {Number(pressure).toFixed()} hpa
+                        <p>{Number(pressure).toFixed()} hpa</p>
                       </div>
                     </div>
                     <br />

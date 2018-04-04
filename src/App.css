@@ -60,10 +60,6 @@ img {
   justify-content: center;
 }
 
-.forecast * {
-  min-width: 20px;
-}
-
 .forecast-list > p:first-child {
   min-width: 200px;
 }
@@ -197,4 +193,12 @@ div.forecast-list p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+div.forecast-list p {
+  padding: 0 0 0 5px;
+}
+
+div.forecast-list img {
+  padding: 0 5px 0 0;
 }
