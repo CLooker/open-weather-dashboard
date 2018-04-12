@@ -16,15 +16,14 @@ export default class CurrentWeather extends Component {
     weather: null
   };
 
-  returnUnitsString = units => (units === 'F' ? 'imperial' : 'metric');
+  componentDidMount() {
+    this.fetchData(this.props.units);
+  }
 
   componentWillReceiveProps({ units }) {
     units !== this.props.units && this.fetchData(units);
   }
 
-  // place on the prototype
-  // so we can spy that it's invoked
-  // by componentDidMount
   fetchData(units) {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=Rome&units=${this.returnUnitsString(
@@ -47,9 +46,7 @@ export default class CurrentWeather extends Component {
       .catch(err => console.log(err));
   }
 
-  componentDidMount() {
-    this.fetchData(this.props.units);
-  }
+  returnUnitsString = units => (units === 'F' ? 'imperial' : 'metric');
 
   render() {
     const {

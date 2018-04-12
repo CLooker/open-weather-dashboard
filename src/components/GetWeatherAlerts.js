@@ -10,6 +10,10 @@ export default class GetWeatherAlerts extends Component {
     updateTriggeredAlerts: PropTypes.func.isRequired
   };
 
+  componentDidMount() {
+    this.fetchAlerts();
+  }
+
   fetchAlerts() {
     const { updateRegisteredAlerts, updateTriggeredAlerts } = this.props;
 
@@ -25,10 +29,6 @@ export default class GetWeatherAlerts extends Component {
         });
       })
       .catch(err => console.log(err));
-  }
-
-  componentDidMount() {
-    this.fetchAlerts();
   }
 
   render() {

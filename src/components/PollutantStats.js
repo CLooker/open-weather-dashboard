@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const PollutantStats = ({ type, chem }) => {
   switch (type) {
@@ -38,6 +39,11 @@ const PollutantStats = ({ type, chem }) => {
     default:
       return null;
   }
+};
+
+PollutantStats.propTypes = {
+  type: PropTypes.string,
+  chem: PropTypes.object
 };
 
 export default PollutantStats;

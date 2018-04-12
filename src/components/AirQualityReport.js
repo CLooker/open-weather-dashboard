@@ -9,12 +9,6 @@ export default class AirQualityReport extends Component {
     so2: {}
   };
 
-  isThereAnyLocalInfo = () =>
-    Object.keys(this.state) // state keys
-      .map(key => this.state[key]) // state key vals
-      .map(obj => Object.keys(obj).length) // coll of state key val lenghts
-      .some(l => l > 0); // check if any are non-zero
-
   componentDidMount() {
     Object.keys(this.state).forEach(key => {
       fetch(
@@ -28,6 +22,12 @@ export default class AirQualityReport extends Component {
         .catch(err => console.log(err));
     });
   }
+
+  isThereAnyLocalInfo = () =>
+    Object.keys(this.state) // state keys
+      .map(key => this.state[key]) // state key vals
+      .map(obj => Object.keys(obj).length) // coll of state key val lengths
+      .some(l => l > 0); // check if any are non-zero
 
   render() {
     return (

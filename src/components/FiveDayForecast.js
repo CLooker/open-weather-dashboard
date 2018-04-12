@@ -14,6 +14,14 @@ export default class FiveDayForecast extends Component {
     forecast: []
   };
 
+  componentDidMount() {
+    this.fetchData(this.props.units);
+  }
+
+  componentWillReceiveProps({ units }) {
+    units !== this.props.units && this.fetchData(units);
+  }
+
   removeToday = ({ list }) => {
     const today = moment().format('dddd MMM Do YY');
     return list.filter(
@@ -128,14 +136,6 @@ export default class FiveDayForecast extends Component {
         });
       })
       .catch(err => console.log(err));
-  }
-
-  componentWillReceiveProps({ units }) {
-    units !== this.props.units && this.fetchData(units);
-  }
-
-  componentDidMount() {
-    this.fetchData(this.props.units);
   }
 
   render() {
