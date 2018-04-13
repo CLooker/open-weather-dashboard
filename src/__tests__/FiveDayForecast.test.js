@@ -12,6 +12,59 @@ describe('FiveDayForecast', () => {
     units: 'F'
   };
 
+  const forecast = [
+    {
+      clouds: 43,
+      day: 'Saturday Apr 14th 18',
+      highs: 59.825,
+      icon: '02n',
+      lows: 59.77125,
+      pressure: 997.1462500000001,
+      weather: 'few clouds',
+      wind: '4.1'
+    },
+    {
+      clouds: 53.5,
+      day: 'Sunday Apr 15th 18',
+      highs: 56.71875,
+      icon: '10d',
+      lows: 56.71875,
+      pressure: 994.075,
+      weather: 'light rain',
+      wind: '3.7'
+    },
+    {
+      clouds: 52,
+      day: 'Monday Apr 16th 18',
+      highs: 57.82125,
+      icon: '10d',
+      lows: 57.82125,
+      pressure: 996.5012499999999,
+      weather: 'light rain',
+      wind: '3.1'
+    },
+    {
+      clouds: 58.5,
+      day: 'Tuesday Apr 17th 18',
+      highs: 57.53750000000001,
+      icon: '10d',
+      lows: 57.53750000000001,
+      pressure: 1000.5387500000002,
+      weather: 'light rain',
+      wind: '3.6'
+    },
+    {
+      clouds: 56,
+      day: 'Wednesday Apr 18th 18',
+      highs: 58.238,
+      icon: '10d',
+      lows: 58.238,
+      pressure: 1001.652,
+      weather: 'light rain',
+      wind: '3.2'
+    }
+  ];
+
   let component;
 
   beforeEach(() => {
@@ -19,8 +72,19 @@ describe('FiveDayForecast', () => {
   });
 
   describe('initialization', () => {
-    it('should render correctly', () => {
-      expect(component).toMatchSnapshot();
+    describe('code paths', () => {
+      describe('`state.forecast` not populated', () => {
+        it('should render correctly', () => {
+          expect(component.debug()).toMatchSnapshot();
+        });
+      });
+
+      describe('`state.forecast` populated', () => {
+        it('should render correctly', () => {
+          component.setState(forecast);
+          expect(component.debug()).toMatchSnapshot();
+        });
+      });
     });
 
     it('should have certain props', () => {

@@ -9,7 +9,7 @@ describe('WeatherAlertContainer', () => {
 
   describe('initialization', () => {
     it('should render correctly', () => {
-      expect(component).toMatchSnapshot();
+      expect(component.debug()).toMatchSnapshot();
     });
 
     it('should have certain state', () => {

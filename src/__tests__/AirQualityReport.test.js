@@ -13,7 +13,7 @@ describe('AirQualityReport', () => {
 
   describe('initialization', () => {
     it('should render correctly', () => {
-      expect(component).toMatchSnapshot();
+      expect(component.debug()).toMatchSnapshot();
     });
 
     describe('rendering', () => {

@@ -39,7 +39,7 @@ describe('PollutantStats', () => {
     it('should render correctly', () => {
       props.forEach(prop => {
         const component = shallow(<PollutantStats {...prop} />);
-        expect(component).toMatchSnapshot();
+        expect(component.debug()).toMatchSnapshot();
       });
     });
   });

@@ -8,6 +8,6 @@ describe('Loading', () => {
       name: 'Chicago'
     };
     const component = shallow(<WeatherAndForecastLocation {...props} />);
-    expect(component).toMatchSnapshot();
+    expect(component.debug()).toMatchSnapshot();
   });
 });
