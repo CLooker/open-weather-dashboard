@@ -22,7 +22,14 @@ export default class CurrentWeather extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    prevState.units !== this.props.units && this.fetchData(this.props.units);
+    if (this.compareUnits(prevState.units)) {
+      this.setState(
+        {
+          units: this.props.units
+        },
+        this.fetchData(this.props.units)
+      );
+    }
   }
 
   fetchData(units) {
@@ -35,6 +42,8 @@ export default class CurrentWeather extends Component {
       .then(this.handleFetchReturn)
       .catch(console.error);
   }
+
+  returnUnitsString = units => (units === 'F' ? 'imperial' : 'metric');
 
   handleFetchReturn = res =>
     this.setState(
@@ -50,9 +59,11 @@ export default class CurrentWeather extends Component {
       this.updateName(res.name)
     );
 
+  compareUnits = units => units !== this.props.units;
+
   updateName = name => this.props.setName(name);
 
-  returnUnitsString = units => (units === 'F' ? 'imperial' : 'metric');
+  checkForName = name => (name ? true : false);
 
   render() {
     const {
