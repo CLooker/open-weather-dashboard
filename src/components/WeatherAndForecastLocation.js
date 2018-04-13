@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-const WeatherAndForecastLocation = ({ name }) => (
-  <h1>Weather and Forecast in {name}</h1>
-);
+export default class WeatherAndForecastLocation extends PureComponent {
+  static propTypes = {
+    name: PropTypes.string
+  };
 
-WeatherAndForecastLocation.propTypes = {
-  name: PropTypes.string
-};
-
-export default WeatherAndForecastLocation;
+  render() {
+    const { name } = this.props;
+    return <h1>Weather and Forecast in {name}</h1>;
+  }
+}
