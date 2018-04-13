@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-export default class CurrentWeatherStats extends PureComponent {
+export default class CurrentWeatherAndIcon extends PureComponent {
   static propTypes = {
     iconCode: PropTypes.string.isRequired,
     weather: PropTypes.string.isRequired

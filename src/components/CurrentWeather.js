@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import Loading from './Loading';
+import CurrentWeatherAndIcon from './CurrentWeatherAndIcon';
+import CurrentTemperature from './CurrentTemperature';
+import CurrentWind from './CurrentWind';
+import CurrentClouds from './CurrentClouds';
+import CurrentPressure from './CurrentPressure';
+import handleConversion from '../utils/handleConversion.js';
 import apiKey from '../api';
 import PropTypes from 'prop-types';
 
@@ -23,12 +29,10 @@ export default class CurrentWeather extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.compareUnits(prevState.units)) {
-      this.setState(
-        {
-          units: this.props.units
-        },
-        this.fetchData(this.props.units)
-      );
+      this.setState({
+        units: this.props.units,
+        temp: handleConversion(prevState.temp, prevState.units)
+      });
     }
   }
 
@@ -73,7 +77,8 @@ export default class CurrentWeather extends Component {
       wind,
       iconCode,
       clouds,
-      pressure
+      pressure,
+      units
     } = this.state;
 
     return (
@@ -85,43 +90,11 @@ export default class CurrentWeather extends Component {
             <div className="current-weather">
               <h3> Weather in {name} </h3>
               <div className="weather" style={{ display: 'flex' }}>
-                <div className="weather-and-icon">
-                  <img
-                    src={`https://openweathermap.org/img/w/${iconCode}.png`}
-                    alt="Icon depicting current weather"
-                  />
-                  <h4>{weather}</h4>
-                </div>
-                <div>
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVYTeX-IT8VF_M7yQQsClU2CQEJTXgoi8T9jaGhB66jpLWQSw"
-                    alt="temperature"
-                  />
-                  <h4>
-                    {temp.toFixed(1)} &deg;{this.props.units}
-                  </h4>
-                </div>
-                <div>
-                  <img
-                    src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLHQKHJiUm02mysUrvH8vaKDY-myNAYfRHCUFJgA-LSiNeOKn-`}
-                    alt="wind"
-                  />
-                  <h4>{wind} mph</h4>
-                </div>
-                <div>
-                  <img
-                    src={`https://openweathermap.org/img/w/03d.png`}
-                    alt="cloudiness"
-                  />
-                  <h4>{clouds}%</h4>
-                </div>
-                <div>
-                  <img
-                    src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe31uwyEa-r1R6ntqu4QPim6J6QQsIPqIrZ1RyEYebzC5esPGc`}
-                    alt="barometric pressure"
-                  />
-                  <h4>{pressure} hpa</h4>
-                </div>
+                <CurrentWeatherAndIcon iconCode={iconCode} weather={weather} />
+                <CurrentTemperature temp={temp} units={units} />
+                <CurrentWind wind={wind} />
+                <CurrentClouds clouds={clouds} />
+                <CurrentPressure pressure={pressure} />
               </div>
             </div>
           </div>

@@ -250,23 +250,23 @@ describe('FiveDayForecast', () => {
         });
       });
 
-      describe('`returnAverages`', () => {
+      describe('`returnSummarizedData`', () => {
         it('should return an object with the correct shape inside an array', () => {
           const day = {
             day: moment().add(1, 'day'),
-            highs: [1, 1],
-            lows: [1, 1],
+            highs: [0, 50, 100],
+            lows: [0, -10, -20],
             wind: [1, 1],
             clouds: [1, 1],
             pressure: [1, 1]
           };
           const daysColl = [day];
-          const actual = component.instance().returnAverages(daysColl);
+          const actual = component.instance().returnSummarizedData(daysColl);
           const expected = [
             {
               ...day,
-              highs: 1,
-              lows: 1,
+              highs: 100,
+              lows: -20,
               wind: '1.0',
               clouds: 1,
               pressure: 1

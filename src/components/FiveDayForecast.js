@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Loading from './Loading';
+import handleConversion from '../utils/handleConversion.js';
 import apiKey from '../api';
 import moment from 'moment';
 import PropTypes from 'prop-types';
@@ -18,9 +19,21 @@ export default class FiveDayForecast extends Component {
     this.fetchData(this.props.units);
   }
 
-  componentWillReceiveProps({ units }) {
-    units !== this.props.units && this.fetchData(units);
+  componentDidUpdate(prevProps, prevState) {
+    this.compareUnits(prevProps.units) &&
+      this.updateForecastTemps(prevProps.units);
   }
+
+  compareUnits = units => units !== this.props.units;
+
+  updateForecastTemps = prevUnits =>
+    this.setState(({ forecast }) => ({
+      forecast: forecast.map(f => ({
+        ...f,
+        highs: handleConversion(f.highs, prevUnits),
+        lows: handleConversion(f.lows, prevUnits)
+      }))
+    }));
 
   removeToday = ({ list }) => {
     const today = moment().format('dddd MMM Do YY');
@@ -43,11 +56,14 @@ export default class FiveDayForecast extends Component {
       icon: null
     }));
 
-  returnAverages = daysColl =>
+  returnSummarizedData = daysColl =>
     daysColl.map(d => ({
       ...d,
-      highs: d.highs.reduce((total, n) => total + n) / d.highs.length,
-      lows: d.lows.reduce((total, n) => total + n) / d.lows.length,
+      highs: d.highs.reduce(
+        (highest, n) => (n > highest ? n : highest),
+        d.highs[0]
+      ),
+      lows: d.lows.reduce((lowest, n) => (n < lowest ? n : lowest), d.lows[0]),
       wind: (d.wind.reduce((total, n) => total + n) / d.wind.length).toFixed(1),
       clouds: d.clouds.reduce((total, n) => total + n) / d.clouds.length,
       pressure: d.pressure.reduce((total, n) => total + n) / d.pressure.length
@@ -94,8 +110,8 @@ export default class FiveDayForecast extends Component {
           });
         });
 
-        // get averages for each category
-        days = this.returnAverages(days);
+        // get averages/max high/max low
+        days = this.returnSummarizedData(days);
 
         // get the most common weather description throughout the day
         // also choose weather icon based on that
