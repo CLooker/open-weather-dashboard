@@ -35,7 +35,8 @@ describe('CurrentWeather', () => {
         name: null,
         temp: null,
         iconCode: null,
-        weather: null
+        weather: null,
+        units: props.units
       };
       expect(actual).toEqual(expected);
     });

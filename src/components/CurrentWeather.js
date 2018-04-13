@@ -13,15 +13,16 @@ export default class CurrentWeather extends Component {
     name: null,
     temp: null,
     iconCode: null,
-    weather: null
+    weather: null,
+    units: this.props.units
   };
 
   componentDidMount() {
     this.fetchData(this.props.units);
   }
 
-  componentWillReceiveProps({ units }) {
-    units !== this.props.units && this.fetchData(units);
+  componentDidUpdate(prevProps, prevState) {
+    prevState.units !== this.props.units && this.fetchData(this.props.units);
   }
 
   fetchData(units) {
