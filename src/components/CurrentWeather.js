@@ -31,20 +31,25 @@ export default class CurrentWeather extends Component {
       )}&APPID=${apiKey}`
     )
       .then(res => res.json())
-      .then(res =>
-        this.setState({
-          name: res.name,
-          temp: res.main.temp,
-          iconCode: res.weather[0].icon,
-          weather: res.weather[0].main,
-          wind: res.wind.speed,
-          clouds: res.clouds.all,
-          pressure: res.main.pressure
-        })
-      )
-      .then(() => this.props.setName(this.state.name))
-      .catch(err => console.log(err));
+      .then(this.handleFetchReturn)
+      .catch(console.error);
   }
+
+  handleFetchReturn = res =>
+    this.setState(
+      {
+        name: res.name,
+        temp: res.main.temp,
+        iconCode: res.weather[0].icon,
+        weather: res.weather[0].main,
+        wind: res.wind.speed,
+        clouds: res.clouds.all,
+        pressure: res.main.pressure
+      },
+      this.updateName(res.name)
+    );
+
+  updateName = name => this.props.setName(name);
 
   returnUnitsString = units => (units === 'F' ? 'imperial' : 'metric');
 
