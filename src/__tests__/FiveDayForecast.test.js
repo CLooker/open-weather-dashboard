@@ -151,8 +151,8 @@ describe('FiveDayForecast', () => {
               day: 'Monday',
               icon: 'fake',
               weather: 'cloudy',
-              highs: 55,
-              lows: 40,
+              high: 55,
+              low: 40,
               wind: 7,
               clouds: 55,
               pressure: 1000
@@ -237,8 +237,8 @@ describe('FiveDayForecast', () => {
           const expected = [
             {
               day,
-              highs: [],
-              lows: [],
+              high: -1000,
+              low: 1000,
               weather: [],
               wind: [],
               clouds: [],
@@ -254,8 +254,8 @@ describe('FiveDayForecast', () => {
         it('should return an object with the correct shape inside an array', () => {
           const day = {
             day: moment().add(1, 'day'),
-            highs: [0, 50, 100],
-            lows: [0, -10, -20],
+            high: 100,
+            low: 0,
             wind: [1, 1],
             clouds: [1, 1],
             pressure: [1, 1]
@@ -265,8 +265,8 @@ describe('FiveDayForecast', () => {
           const expected = [
             {
               ...day,
-              highs: 100,
-              lows: -20,
+              high: 100,
+              low: 0,
               wind: '1.0',
               clouds: 1,
               pressure: 1

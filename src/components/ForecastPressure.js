@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-export default class CurrentPressure extends PureComponent {
+export default class ForecastPressure extends PureComponent {
   static propTypes = {
     pressure: PropTypes.number.isRequired
   };
@@ -9,12 +9,12 @@ export default class CurrentPressure extends PureComponent {
   render() {
     const { pressure } = this.props;
     return (
-      <div title="Current Barometric Pressure">
+      <div title="Barometric Pressure">
         <img
           src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe31uwyEa-r1R6ntqu4QPim6J6QQsIPqIrZ1RyEYebzC5esPGc`}
           alt="barometric pressure"
         />
-        <h4>{pressure} hpa</h4>
+        <p>{Number(pressure).toFixed()} hpa</p>
       </div>
     );
   }

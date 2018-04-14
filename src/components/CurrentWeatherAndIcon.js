@@ -10,7 +10,7 @@ export default class CurrentWeatherAndIcon extends PureComponent {
   render() {
     const { iconCode, weather } = this.props;
     return (
-      <div className="weather-and-icon">
+      <div className="weather-and-icon" title="Current Weather">
         <img
           src={`https://openweathermap.org/img/w/${iconCode}.png`}
           alt="Icon depicting current weather"

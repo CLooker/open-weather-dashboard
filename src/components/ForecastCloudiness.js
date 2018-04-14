@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-export default class CurrentClouds extends PureComponent {
+export default class FiveDayForecastCollCloudiness extends PureComponent {
   static propTypes = {
     clouds: PropTypes.number.isRequired
   };
@@ -9,12 +9,12 @@ export default class CurrentClouds extends PureComponent {
   render() {
     const { clouds } = this.props;
     return (
-      <div title="Current Cloudiness">
+      <div title="Cloudiness">
         <img
           src={`https://openweathermap.org/img/w/03d.png`}
           alt="cloudiness"
         />
-        <h4>{clouds}%</h4>
+        <p>{clouds.toFixed()}%</p>
       </div>
     );
   }

@@ -28,13 +28,14 @@ export default class CurrentWeather extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.compareUnits(prevState.units)) {
-      this.setState({
-        units: this.props.units,
-        temp: handleConversion(prevState.temp, prevState.units)
-      });
-    }
+    this.compareUnits(prevState.units) && this.updateCurrentTemp(prevState);
   }
+
+  updateCurrentTemp = prevState =>
+    this.setState({
+      units: this.props.units,
+      temp: handleConversion(prevState.temp, prevState.units)
+    });
 
   fetchData(units) {
     fetch(
