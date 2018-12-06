@@ -3,7 +3,7 @@
 exports[`WeatherAlertContainer initialization should render correctly 1`] = `
 "<div className=\\"weather-alert-container\\">
   <div className=\\"weather-alert-container-title-icon\\">
-    <img src=\\"alert.jpg\\" alt=\\"alert\\" />
+    <img src=\\"test-file-stub\\" alt=\\"alert\\" />
     <h3>
       Weather Alerts
     </h3>
