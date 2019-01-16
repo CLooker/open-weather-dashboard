@@ -1,7 +1,7 @@
 body {
   min-width: 1000px;
-  margin: 0 50px;
   overflow: auto;
+  overflow-y: scroll;
 }
 
 ul {
@@ -13,7 +13,7 @@ img {
   height: 50px;
 }
 
-.component-container {
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,34 +55,27 @@ img {
   padding: 0 20px;
 }
 
-.forecast {
+.forecasts {
   display: flex;
   justify-content: center;
 }
 
-.forecast-list > p:first-child {
+.forecast-list:first-child {
   min-width: 200px;
 }
 
 .forecast-list {
+  text-align: center;
   display: flex;
-  flex-direction: column;
-}
-
-.weather-and-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
 
 .five-day-forecast {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   border: 1px solid lightgrey;
-  margin: 15px 50px 15px 50px;
+  margin: 15px 25px;
   border-radius: 10px;
 }
 
@@ -97,51 +90,49 @@ img {
 .forecast-list div {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.air-quality-report-container {
+.air-quality-report-icon-and-text-container {
   border: solid 1px lightgrey;
   border-radius: 10px;
   margin: 10px;
   padding: 15px 0 0;
 }
 
-.air-quality-report > div:first-child {
+.air-quality-report-icon-and-text > div:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.chem-container {
+.pollutant-reports-container {
   list-style-type: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.pollutant-stats {
+.pollutant-report {
   margin: 10px;
 }
 
-.pollutant-stats * {
+.pollutant-report * {
   display: flex;
-  align-items: center;
 }
 
-.weather-alert-container {
+.weather-alerts-container {
   border: solid 1px lightgrey;
   border-radius: 10px;
   margin: 10px;
 }
 
-.weather-alert-container-title-icon {
+.weather-alerts-container > * {
+  text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 15px 0 0;
-}
-
-.weather-alert-container-title-icon h3 {
-  text-align: center;
 }
 
 .alert-container {
@@ -150,7 +141,7 @@ img {
   justify-content: flex-start;
 }
 
-.create-weather-alert-container {
+.create-weather-alerts-container {
   margin-right: 15px;
 }
 
@@ -165,6 +156,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px 0;
 }
 
 .create-weather-alert-title-icon img {
@@ -188,7 +180,10 @@ img {
 }
 
 .get-weather-alerts {
-  margin-right: 5px;
+  margin: 0 5px;
+  padding: 0 0 0 10px;
+  position: relative;
+  bottom: 10px;
 }
 
 .unit-switcher input {
@@ -223,25 +218,25 @@ div.weather div {
   padding: 0 0 10px;
 }
 
-.pollutant-stats-info {
+.pollutant-report-info {
   display: flex;
 }
 
-.pollutant-stats h5 {
+.pollutant-report h5 {
   margin-right: 5px;
 }
 
-.pollutant-stats p {
+.pollutant-report p {
   font-size: 15px;
 }
 
-.pollutant-stats div {
+.pollutant-report div {
   display: flex;
   flex-direction: column;
   align-items: left;
 }
 
-.pollutant-stats * {
+.pollutant-report * {
   margin: 0;
   padding: 0;
 }
