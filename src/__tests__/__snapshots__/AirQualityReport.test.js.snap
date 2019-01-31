@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AirQualityReport initialization should render correctly 1`] = `
-"<div className=\\"air-quality-report-container\\">
-  <Loading />
-</div>"
-`;
