@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import moment from 'moment';
 import {
   apiKey,
@@ -11,9 +12,45 @@ import {
 } from '../../utils';
 import { IconAndText, Loading } from '../common';
 
-export default class forecasts extends PureComponent {
+const FiveDayForecastWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid lightgrey;
+  margin: 15px 25px;
+  border-radius: 10px;
+`;
+
+const FiveDayForecastTitle = styled.h3`
+  margin: 20px 0 -1px;
+  padding: 0 0 10px;
+`;
+
+const Forecasts = styled.div`
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+`;
+
+const Forecast = styled.div`
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 185px;
+`;
+
+const ForecastIconAndText = styled(IconAndText)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export default class FiveDayForecast extends PureComponent {
   static propTypes = {
-    name: PropTypes.string,
     units: PropTypes.string.isRequired
   };
 
@@ -171,39 +208,15 @@ export default class forecasts extends PureComponent {
   };
 
   render() {
-    const { name, units } = this.props;
+    const { units } = this.props;
     const { forecasts } = this.state;
 
     if (!forecasts.length) return <Loading />;
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          border: '1px solid lightgrey',
-          margin: '15px 25px',
-          borderRadius: '10px'
-        }}
-      >
-        <h3
-          style={{
-            margin: '20px 0 -1px',
-            padding: '0 0 10px'
-          }}
-        >
-          Forecast in {name}
-        </h3>
-        <ul
-          style={{
-            listStyleType: 'none',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '0'
-          }}
-        >
+      <FiveDayForecastWrapper>
+        <FiveDayForecastTitle>Forecast</FiveDayForecastTitle>
+        <Forecasts>
           {forecasts.map(forecast => {
             const {
               day,
@@ -217,37 +230,17 @@ export default class forecasts extends PureComponent {
             } = forecast;
 
             return (
-              <li
-                key={day}
-                style={{
-                  textAlign: 'center',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'space-evenly',
-                  minWidth: '185px'
-                }}
-              >
+              <Forecast key={day}>
                 <div>
                   <h4>{day.slice(0, day.length - 2)}</h4>
-                  <IconAndText
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center'
-                    }}
+                  <ForecastIconAndText
                     titleAttr='Weather Forecast'
                     text={<p>{weather}</p>}
                     iconStyle={{ padding: '0 5px 0' }}
                     iconSrc={`https://openweathermap.org/img/w/${icon}.png`}
                   />
                   <br />
-                  <IconAndText
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center'
-                    }}
+                  <ForecastIconAndText
                     titleAttr='High Temperature'
                     iconStyle={{ padding: '0 5px 0' }}
                     iconSrc={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVYTeX-IT8VF_M7yQQsClU2CQEJTXgoi8T9jaGhB66jpLWQSw`}
@@ -256,12 +249,7 @@ export default class forecasts extends PureComponent {
                     }`}
                   />
                   <br />
-                  <IconAndText
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center'
-                    }}
+                  <ForecastIconAndText
                     titleAttr='Low Temperature'
                     iconSrc={`https://lh3.googleusercontent.com/umbUE_DTWWiYad0I1ZB38WcSBFSLzSYYgKSJwTdHnjHHpuTMfvMoGHEiv4iPolyY-A=w300`}
                     text={`${low.toFixed(1)} ${
@@ -281,24 +269,14 @@ export default class forecasts extends PureComponent {
                     text={`${wind} m/ph`}
                   />
                   <br />
-                  <IconAndText
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center'
-                    }}
+                  <ForecastIconAndText
                     titleAttr='Cloudiness'
                     iconStyle={{ padding: '0 5px 0' }}
                     iconSrc={`https://openweathermap.org/img/w/03d.png`}
                     text={`${clouds.toFixed()}%`}
                   />
                   <br />
-                  <IconAndText
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center'
-                    }}
+                  <ForecastIconAndText
                     titleAttr='Barometric Pressure'
                     iconStyle={{ padding: '0 5px 0' }}
                     iconSrc={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe31uwyEa-r1R6ntqu4QPim6J6QQsIPqIrZ1RyEYebzC5esPGc`}
@@ -306,11 +284,11 @@ export default class forecasts extends PureComponent {
                   />
                 </div>
                 <br />
-              </li>
+              </Forecast>
             );
           })}
-        </ul>
-      </div>
+        </Forecasts>
+      </FiveDayForecastWrapper>
     );
   }
 }

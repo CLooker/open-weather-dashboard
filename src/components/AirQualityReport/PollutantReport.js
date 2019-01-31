@@ -1,62 +1,54 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const PollutantReport = ({ pollutant, data }) => {
-  const { value, pressure, precision } = data;
+const PollutantReportWrapper = styled.div`
+  margin: 0 5px;
+`;
 
-  return (
-    <div
-      style={{
-        margin: '0 5px'
-      }}
-    >
-      <strong title='Pollutant'>{pollutant.toUpperCase()}</strong>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          height: '15px',
-          margin: '2px 0'
-        }}
-      >
-        <h5 style={{ padding: '0 2px 0 0' }} title='Mixing Ratio'>
-          Value:
-        </h5>
-        {value}
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          height: '15px',
-          margin: '2px 0'
-        }}
-      >
-        <h5 style={{ padding: '0 2px 0 0' }} title='Atmospheric Pressure'>
-          Pressure:
-        </h5>
-        {pressure} hPa
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          height: '15px',
-          margin: '2px 0'
-        }}
-      >
-        <h5 style={{ padding: '0 2px 0 0' }} title='Measurement Precision'>
-          Precision:
-        </h5>
-        {precision}
-      </div>
-    </div>
-  );
-};
+const DataWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 15px;
+  margin: 2px 0;
+`;
 
-PollutantReport.propTypes = {
-  pollutant: PropTypes.string,
-  data: PropTypes.object
-};
+const DataTitleWrapper = styled.h5`
+  padding: 0 2px 0 0;
+`;
 
-export default PollutantReport;
+export default class PollutantReport extends PureComponent {
+  static propTypes = {
+    pollutant: PropTypes.string,
+    data: PropTypes.object
+  };
+
+  render() {
+    const {
+      pollutant,
+      data: { value, pressure, precision }
+    } = this.props;
+
+    return (
+      <PollutantReportWrapper>
+        <strong title='Pollutant'>{pollutant.toUpperCase()}</strong>
+        <DataWrapper>
+          <DataTitleWrapper title='Mixing Ratio'>Value:</DataTitleWrapper>
+          {value}
+        </DataWrapper>
+        <DataWrapper>
+          <DataTitleWrapper title='Atmospheric Pressure'>
+            Pressure:
+          </DataTitleWrapper>
+          {pressure} hPa
+        </DataWrapper>
+        <DataWrapper>
+          <DataTitleWrapper title='Measurement Precision'>
+            Precision:
+          </DataTitleWrapper>
+          {precision}
+        </DataWrapper>
+      </PollutantReportWrapper>
+    );
+  }
+}

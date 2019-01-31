@@ -1,8 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import moment from 'moment';
 import { apiKey } from '../../utils';
 import { IconAndText } from '../common';
+
+const CreateWeatherAlertWrapper = styled.div`
+  margin: 0 15px;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const IconAndTextWrapper = styled(IconAndText)`
+  margin: 5px 0 10px 0;
+  display: flex;
+`;
+
+const SubmitWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 5px 0 0;
+`;
 
 export default class CreateWeatherAlert extends Component {
   static propTypes = {
@@ -131,20 +153,9 @@ export default class CreateWeatherAlert extends Component {
     const { alertTemperature, displayMessage, units } = this.state;
 
     return (
-      <div
-        style={{
-          margin: '0 15px'
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'column'
-          }}
-        >
-          <IconAndText
-            style={{ margin: '5px 0 10px 0', display: 'flex' }}
+      <CreateWeatherAlertWrapper>
+        <Wrapper>
+          <IconAndTextWrapper
             iconStyle={{ width: '25px', height: '25px' }}
             titleAttr={'create alert'}
             iconSrc='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVYTeX-IT8VF_M7yQQsClU2CQEJTXgoi8T9jaGhB66jpLWQSw'
@@ -164,21 +175,15 @@ export default class CreateWeatherAlert extends Component {
                 <option value='K'>&deg;K</option>
               </select>
             </div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                margin: '5px 0 0'
-              }}
-            >
+            <SubmitWrapper>
               <input type='submit' value='Submit' />
-            </div>
+            </SubmitWrapper>
           </form>
           <div>
             <h5>{displayMessage}</h5>
           </div>
-        </div>
-      </div>
+        </Wrapper>
+      </CreateWeatherAlertWrapper>
     );
   }
 }

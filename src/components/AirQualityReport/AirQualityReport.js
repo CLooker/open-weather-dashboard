@@ -1,7 +1,15 @@
 import React, { PureComponent } from 'react';
+import styled from 'styled-components';
 import { apiKey } from '../../utils';
 import { IconAndText, Loading } from '../common';
 import PollutantReport from './PollutantReport';
+
+const AirQualityReportWrapper = styled.div`
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px 0 0;
+`;
 
 export default class AirQualityReport extends PureComponent {
   state = {
@@ -53,53 +61,56 @@ export default class AirQualityReport extends PureComponent {
       Object.values(pollutant).every(value => value === 0)
     );
 
-  getAirQualityReportIconAndText = () => (
-    <div>
-      <IconAndText
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-        alt='air quality report'
-        iconSrc='https://image.freepik.com/icones-gratis/fabrica-de-fumaca-eco_318-41523.jpg'
-        text={<h3>Air Quality Report</h3>}
-      />
-    </div>
-  );
+  getAirQualityReportIconAndText = () => {
+    const IconAndTextWrapper = styled(IconAndText)`
+      display: flex;
+      justify-content: center;
+      align-items: 'center';
+    `;
 
-  getPollutantReports = () => (
-    <div
-      style={{
-        listStyleType: 'none',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}
-    >
-      {Object.entries(this.state).map(entry => {
-        const [pollutant, data] = entry;
-        return (
-          <PollutantReport key={pollutant} pollutant={pollutant} data={data} />
-        );
-      })}
-    </div>
-  );
+    return (
+      <div>
+        <IconAndTextWrapper
+          alt='air quality report'
+          iconSrc='https://image.freepik.com/icones-gratis/fabrica-de-fumaca-eco_318-41523.jpg'
+          text={<h3>Air Quality Report</h3>}
+        />
+      </div>
+    );
+  };
+
+  getPollutantReports = () => {
+    const PollutantReportsWrapper = styled.div`
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `;
+
+    return (
+      <PollutantReportsWrapper>
+        {Object.entries(this.state).map(entry => {
+          const [pollutant, data] = entry;
+          return (
+            <PollutantReport
+              key={pollutant}
+              pollutant={pollutant}
+              data={data}
+            />
+          );
+        })}
+      </PollutantReportsWrapper>
+    );
+  };
 
   render() {
     if (this.getIsLoading()) return <Loading />;
+
     return (
-      <div
-        style={{
-          border: 'solid 1px lightgrey',
-          borderRadius: '10px',
-          margin: '10px',
-          padding: '15px 0 0'
-        }}
-      >
+      <AirQualityReportWrapper>
         {this.getAirQualityReportIconAndText()}
         {this.getPollutantReports()}
-      </div>
+      </AirQualityReportWrapper>
     );
   }
 }
