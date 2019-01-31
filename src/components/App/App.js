@@ -14,7 +14,7 @@ export default class App extends Component {
   setUnits = units => this.setState({ units });
 
   render() {
-    const { name, units } = this.state;
+    const { units } = this.state;
 
     return (
       <div
