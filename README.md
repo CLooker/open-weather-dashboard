@@ -10,12 +10,6 @@ In your favorite shell, navigate to your installation directory and type `npm i`
 
 Then type `npm start` or `yarn start`. That will open the app in a browswer window.
 
-# Jest
-
-If you haven't already, navigate to your installing directory and type `npm i` or `yarn`;
-
-Then type `npm t` or `yarn test`.
-
 # Context
 
 I created this project in a few days at the behest of a job posting. I secured the job with this project.
