@@ -1,7 +1,23 @@
 import React, { PureComponent } from 'react';
+import styled from 'styled-components';
 import CreateWeatherAlert from './CreateWeatherAlert';
 import GetWeatherAlerts from './GetWeatherAlerts';
 import { IconAndText } from '../common';
+
+const WeatherAlertsWrapper = styled.div`
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+`;
+
+const IconAndTextWrapper = styled(IconAndText)`
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+`;
 
 export default class WeatherAlerts extends PureComponent {
   state = {
@@ -25,27 +41,13 @@ export default class WeatherAlerts extends PureComponent {
   render() {
     const { registeredAlertsTotal, triggeredAlertsTotal } = this.state;
     return (
-      <div
-        style={{
-          border: 'solid 1px lightgrey',
-          borderRadius: '10px'
-        }}
-      >
-        <IconAndText
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            margin: '10px'
-          }}
+      <WeatherAlertsWrapper>
+        <IconAndTextWrapper
           alt='alert'
           iconSrc={require('../../assets/alert.jpg')}
           text={<h3>Weather Alerts</h3>}
         />
-        <div
-          style={{
-            display: 'flex'
-          }}
-        >
+        <Wrapper>
           <CreateWeatherAlert
             incrementRegisteredAlertsTotal={this.incrementRegisteredAlertsTotal}
           />
@@ -55,8 +57,8 @@ export default class WeatherAlerts extends PureComponent {
             setRegisteredAlertsTotal={this.setRegisteredAlertsTotal}
             incrementTriggeredAlertsTotal={this.incrementTriggeredAlertsTotal}
           />
-        </div>
-      </div>
+        </Wrapper>
+      </WeatherAlertsWrapper>
     );
   }
 }

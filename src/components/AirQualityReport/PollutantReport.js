@@ -1,5 +1,21 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const PollutantReportWrapper = styled.div`
+  margin: 0 5px;
+`;
+
+const DataWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 15px;
+  margin: 2px 0;
+`;
+
+const DataTitleWrapper = styled.h5`
+  padding: 0 2px 0 0;
+`;
 
 export default class PollutantReport extends PureComponent {
   static propTypes = {
@@ -14,52 +30,25 @@ export default class PollutantReport extends PureComponent {
     } = this.props;
 
     return (
-      <div
-        style={{
-          margin: '0 5px'
-        }}
-      >
+      <PollutantReportWrapper>
         <strong title='Pollutant'>{pollutant.toUpperCase()}</strong>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            height: '15px',
-            margin: '2px 0'
-          }}
-        >
-          <h5 style={{ padding: '0 2px 0 0' }} title='Mixing Ratio'>
-            Value:
-          </h5>
+        <DataWrapper>
+          <DataTitleWrapper title='Mixing Ratio'>Value:</DataTitleWrapper>
           {value}
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            height: '15px',
-            margin: '2px 0'
-          }}
-        >
-          <h5 style={{ padding: '0 2px 0 0' }} title='Atmospheric Pressure'>
+        </DataWrapper>
+        <DataWrapper>
+          <DataTitleWrapper title='Atmospheric Pressure'>
             Pressure:
-          </h5>
+          </DataTitleWrapper>
           {pressure} hPa
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            height: '15px',
-            margin: '2px 0'
-          }}
-        >
-          <h5 style={{ padding: '0 2px 0 0' }} title='Measurement Precision'>
+        </DataWrapper>
+        <DataWrapper>
+          <DataTitleWrapper title='Measurement Precision'>
             Precision:
-          </h5>
+          </DataTitleWrapper>
           {precision}
-        </div>
-      </div>
+        </DataWrapper>
+      </PollutantReportWrapper>
     );
   }
 }

@@ -1,7 +1,18 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { apiKey, handleConversion, farenheit, celsius } from '../../utils';
 import { IconAndText, Loading } from '../common';
+
+const CurrentWeatherWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  text-align: center;
+`;
 
 export default class CurrentWeather extends PureComponent {
   static propTypes = {
@@ -90,22 +101,27 @@ export default class CurrentWeather extends PureComponent {
       }
     ];
 
+    const Wrapper = styled.div`
+      display: flex;
+    `;
+
+    const IconAndTextWrapper = styled(IconAndText)`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 40px;
+    `;
+
     return (
-      <div style={{ display: 'flex' }}>
+      <Wrapper>
         {iconAndTextPropsArr.map(iconAndTextProps => (
-          <IconAndText
+          <IconAndTextWrapper
             key={iconAndTextProps.titleAttr}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '0 40px'
-            }}
             {...iconAndTextProps}
           />
         ))}
-      </div>
+      </Wrapper>
     );
   };
 
@@ -113,22 +129,12 @@ export default class CurrentWeather extends PureComponent {
     if (this.getIsLoading()) return <Loading />;
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          border: '1px solid lightgrey',
-          borderRadius: '10px',
-          textAlign: 'center'
-        }}
-      >
+      <CurrentWeatherWrapper>
         <div>
           <h3>Current Weather</h3>
           {this.getCurrentWeatherComponents()}
         </div>
-      </div>
+      </CurrentWeatherWrapper>
     );
   }
 }
