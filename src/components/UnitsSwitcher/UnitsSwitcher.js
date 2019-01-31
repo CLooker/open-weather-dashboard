@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import { farenheit } from '../../utils';
 import UnitsSwitcherInput from './UnitsSwitcherInput';
 
+const style = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  margin: '20px'
+};
+
 export default class UnitsSwitcher extends Component {
   static propTypes = {
     setUnits: PropTypes.func.isRequired,
@@ -15,7 +23,7 @@ export default class UnitsSwitcher extends Component {
   render() {
     const { units } = this.props;
     return (
-      <div className='unit-switcher'>
+      <div style={style}>
         <div>
           <UnitsSwitcherInput
             dashboardUnits={units}

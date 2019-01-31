@@ -9,10 +9,19 @@ export default class IconAndText extends PureComponent {
   };
 
   render() {
-    const { alt, className, titleAttr, iconSrc, text } = this.props;
+    const {
+      alt,
+      className,
+      iconStyle,
+      style,
+      titleAttr,
+      iconSrc,
+      text
+    } = this.props;
     return (
-      <div className={className} title={titleAttr}>
+      <div style={style} className={className} title={titleAttr}>
         <img
+          style={iconStyle}
           src={iconSrc}
           alt={alt || `${titleAttr && titleAttr.toLowerCase()} icon`}
         />

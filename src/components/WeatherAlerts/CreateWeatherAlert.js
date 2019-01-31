@@ -26,18 +26,18 @@ export default class CreateWeatherAlert extends Component {
     });
 
   getReqBody = () => {
-    const start = moment().valueOf();
+    const now = moment().valueOf();
 
     return JSON.stringify({
       // from now until 1 week
       time_period: {
         start: {
           expression: 'after',
-          amount: start
+          amount: now
         },
         end: {
           expression: 'before',
-          amount: moment(start)
+          amount: moment(now)
             .add(1, 'week')
             .valueOf()
         }
@@ -131,10 +131,21 @@ export default class CreateWeatherAlert extends Component {
     const { alertTemperature, displayMessage, units } = this.state;
 
     return (
-      <div className='create-weather-alert-container'>
-        <div className='create-weather-alert'>
+      <div
+        style={{
+          margin: '0 15px'
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column'
+          }}
+        >
           <IconAndText
-            className='create-weather-alert-title-icon'
+            style={{ margin: '5px 0 10px 0', display: 'flex' }}
+            iconStyle={{ width: '25px', height: '25px' }}
             titleAttr={'create alert'}
             iconSrc='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVYTeX-IT8VF_M7yQQsClU2CQEJTXgoi8T9jaGhB66jpLWQSw'
             text={'Create Max Temperature Alert'}
@@ -153,7 +164,15 @@ export default class CreateWeatherAlert extends Component {
                 <option value='K'>&deg;K</option>
               </select>
             </div>
-            <input type='submit' value='Submit' />
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                margin: '5px 0 0'
+              }}
+            >
+              <input type='submit' value='Submit' />
+            </div>
           </form>
           <div>
             <h5>{displayMessage}</h5>

@@ -37,7 +37,14 @@ export default class GetWeatherAlerts extends Component {
   render() {
     const { registeredAlertsTotal, triggeredAlertsTotal } = this.props;
     return (
-      <div className='get-weather-alerts'>
+      <div
+        style={{
+          margin: '0 5px',
+          padding: '0 0 0 10px',
+          position: 'relative',
+          bottom: '18px'
+        }}
+      >
         <h6>Registered Alerts: {registeredAlertsTotal}</h6>
         <h6>Triggered Alerts: {triggeredAlertsTotal}</h6>
       </div>

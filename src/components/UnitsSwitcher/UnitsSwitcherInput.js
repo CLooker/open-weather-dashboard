@@ -17,6 +17,7 @@ export default class UnitsSwitcherInput extends Component {
         type='button'
         value={inputUnits === 'F' ? farenheit : celsius}
         style={{
+          width: '50px',
           opacity: dashboardUnits === inputUnits ? '1' : '.5'
         }}
         onClick={handleClick}

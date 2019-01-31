@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { apiKey } from '../../utils';
-import { IconAndText, Loading, Title } from '../common';
+import { IconAndText, Loading } from '../common';
 import PollutantReport from './PollutantReport';
 
 export default class AirQualityReport extends PureComponent {
@@ -26,12 +26,13 @@ export default class AirQualityReport extends PureComponent {
         .then(res => {
           const { data } = res;
           const { length } = data;
+
           if (!data || !length) return;
 
           const accumulatedData = data.reduce(
             (accumulatedData, dataObj) => ({
               precision: accumulatedData.precision + dataObj.precision,
-              pressure: accumulatedData.pressure + dataObj.precision,
+              pressure: accumulatedData.pressure + dataObj.pressure,
               value: accumulatedData.value + dataObj.value
             }),
             this.state[pollutant]
@@ -47,23 +48,35 @@ export default class AirQualityReport extends PureComponent {
     });
   }
 
-  doesStateHaveData = () =>
-    Object.values(this.state).some(pollutant =>
-      Object.values(pollutant).some(value => value !== 0)
+  getIsLoading = () =>
+    Object.values(this.state).every(pollutant =>
+      Object.values(pollutant).every(value => value === 0)
     );
 
   getAirQualityReportIconAndText = () => (
-    <div className='air-quality-report-icon-and-text'>
+    <div>
       <IconAndText
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
         alt='air quality report'
         iconSrc='https://image.freepik.com/icones-gratis/fabrica-de-fumaca-eco_318-41523.jpg'
-        text={<Title HeaderTag='h3' text='Air Quality Report' />}
+        text={<h3>Air Quality Report</h3>}
       />
     </div>
   );
 
   getPollutantReports = () => (
-    <div className='pollutant-reports-container'>
+    <div
+      style={{
+        listStyleType: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    >
       {Object.entries(this.state).map(entry => {
         const [pollutant, data] = entry;
         return (
@@ -74,9 +87,16 @@ export default class AirQualityReport extends PureComponent {
   );
 
   render() {
-    if (!this.doesStateHaveData()) return <Loading />;
+    if (this.getIsLoading()) return <Loading />;
     return (
-      <div className='air-quality-report-icon-and-text-container'>
+      <div
+        style={{
+          border: 'solid 1px lightgrey',
+          borderRadius: '10px',
+          margin: '10px',
+          padding: '15px 0 0'
+        }}
+      >
         {this.getAirQualityReportIconAndText()}
         {this.getPollutantReports()}
       </div>

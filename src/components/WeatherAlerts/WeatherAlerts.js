@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import CreateWeatherAlert from './CreateWeatherAlert';
 import GetWeatherAlerts from './GetWeatherAlerts';
-import { IconAndText, Title } from '../common';
+import { IconAndText } from '../common';
 
 export default class WeatherAlerts extends PureComponent {
   state = {
@@ -25,13 +25,27 @@ export default class WeatherAlerts extends PureComponent {
   render() {
     const { registeredAlertsTotal, triggeredAlertsTotal } = this.state;
     return (
-      <div className='weather-alerts-container'>
+      <div
+        style={{
+          border: 'solid 1px lightgrey',
+          borderRadius: '10px'
+        }}
+      >
         <IconAndText
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            margin: '10px'
+          }}
           alt='alert'
           iconSrc={require('../../assets/alert.jpg')}
-          text={<Title HeaderTag='h3' text='Weather Alerts' />}
+          text={<h3>Weather Alerts</h3>}
         />
-        <div className='alert-container'>
+        <div
+          style={{
+            display: 'flex'
+          }}
+        >
           <CreateWeatherAlert
             incrementRegisteredAlertsTotal={this.incrementRegisteredAlertsTotal}
           />

@@ -9,7 +9,7 @@ import {
   celsius,
   farenheit
 } from '../../utils';
-import { IconAndText, Loading, Title } from '../common';
+import { IconAndText, Loading } from '../common';
 
 export default class forecasts extends PureComponent {
   static propTypes = {
@@ -26,7 +26,7 @@ export default class forecasts extends PureComponent {
       `https://api.openweathermap.org/data/2.5/forecast?id=6539761&units=imperial&APPID=${apiKey}`
     )
       .then(res => res.json())
-      .then(this.handleRes)
+      .then(this.handleResponse)
       .catch(console.error);
   }
 
@@ -43,7 +43,7 @@ export default class forecasts extends PureComponent {
     }
   }
 
-  handleRes = res => {
+  handleResponse = res => {
     // add day key/value to help us
     res.list = res.list.map(forecast => ({
       ...forecast,
@@ -170,21 +170,6 @@ export default class forecasts extends PureComponent {
     });
   };
 
-  // getForecastComponents = () => {
-  //   const { forecasts } = this.state;
-  //   const getForecastComponentProps = forecast => ({
-  //     day,
-  //     icon,
-  //     weather,
-  //     high,
-  //     low,
-  //     wind,
-  //     clouds,
-  //     pressure,
-  //     units
-  //   });
-  // };
-
   render() {
     const { name, units } = this.props;
     const { forecasts } = this.state;
@@ -192,13 +177,33 @@ export default class forecasts extends PureComponent {
     if (!forecasts.length) return <Loading />;
 
     return (
-      <div className='five-day-forecast'>
-        <Title
-          className='five-day-forecast-title'
-          HeaderTag='h3'
-          text={`Forecast in ${name}`}
-        />
-        <ul className='forecast'>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          border: '1px solid lightgrey',
+          margin: '15px 25px',
+          borderRadius: '10px'
+        }}
+      >
+        <h3
+          style={{
+            margin: '20px 0 -1px',
+            padding: '0 0 10px'
+          }}
+        >
+          Forecast in {name}
+        </h3>
+        <ul
+          style={{
+            listStyleType: 'none',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '0'
+          }}
+        >
           {forecasts.map(forecast => {
             const {
               day,
@@ -212,21 +217,39 @@ export default class forecasts extends PureComponent {
             } = forecast;
 
             return (
-              <li key={day}>
-                <div className='forecast-list'>
-                  <Title
-                    HeaderTag='h4'
-                    text={`${day.slice(0, day.length - 2)}`}
-                  />
-                  <br />
+              <li
+                key={day}
+                style={{
+                  textAlign: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'space-evenly',
+                  minWidth: '185px'
+                }}
+              >
+                <div>
+                  <h4>{day.slice(0, day.length - 2)}</h4>
                   <IconAndText
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
                     titleAttr='Weather Forecast'
+                    text={<p>{weather}</p>}
+                    iconStyle={{ padding: '0 5px 0' }}
                     iconSrc={`https://openweathermap.org/img/w/${icon}.png`}
-                    text={weather}
                   />
                   <br />
                   <IconAndText
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
                     titleAttr='High Temperature'
+                    iconStyle={{ padding: '0 5px 0' }}
                     iconSrc={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVYTeX-IT8VF_M7yQQsClU2CQEJTXgoi8T9jaGhB66jpLWQSw`}
                     text={`${high.toFixed(1)} ${
                       units === 'F' ? farenheit : celsius
@@ -234,6 +257,11 @@ export default class forecasts extends PureComponent {
                   />
                   <br />
                   <IconAndText
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
                     titleAttr='Low Temperature'
                     iconSrc={`https://lh3.googleusercontent.com/umbUE_DTWWiYad0I1ZB38WcSBFSLzSYYgKSJwTdHnjHHpuTMfvMoGHEiv4iPolyY-A=w300`}
                     text={`${low.toFixed(1)} ${
@@ -242,19 +270,37 @@ export default class forecasts extends PureComponent {
                   />
                   <br />
                   <IconAndText
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
                     titleAttr='Wind'
+                    iconStyle={{ padding: '0 5px 0' }}
                     iconSrc={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLHQKHJiUm02mysUrvH8vaKDY-myNAYfRHCUFJgA-LSiNeOKn-`}
-                    text={wind}
+                    text={`${wind} m/ph`}
                   />
                   <br />
                   <IconAndText
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
                     titleAttr='Cloudiness'
+                    iconStyle={{ padding: '0 5px 0' }}
                     iconSrc={`https://openweathermap.org/img/w/03d.png`}
                     text={`${clouds.toFixed()}%`}
                   />
                   <br />
                   <IconAndText
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
                     titleAttr='Barometric Pressure'
+                    iconStyle={{ padding: '0 5px 0' }}
                     iconSrc={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe31uwyEa-r1R6ntqu4QPim6J6QQsIPqIrZ1RyEYebzC5esPGc`}
                     text={`${pressure.toFixed()} hpa`}
                   />
