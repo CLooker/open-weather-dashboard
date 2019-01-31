@@ -8,7 +8,6 @@ import './App.css';
 
 export default class App extends Component {
   state = {
-    name: 'Rome',
     units: 'F'
   };
 
@@ -26,7 +25,7 @@ export default class App extends Component {
           justifyContent: 'center'
         }}
       >
-        <h1>Current Weather and Forecast in {name}</h1>
+        <h1>Current Weather and Forecast in Rome</h1>
         <UnitsSwitcher setUnits={this.setUnits} units={units} />
         <CurrentWeather units={units} />
         <FiveDayForecast units={units} />
