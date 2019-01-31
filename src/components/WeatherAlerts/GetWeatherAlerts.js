@@ -5,15 +5,9 @@ import { apiKey } from '../../utils';
 export default class GetWeatherAlerts extends Component {
   static propTypes = {
     incrementTriggeredAlertsTotal: PropTypes.func.isRequired,
-    registeredAlertsTotal: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
+    registeredAlertsTotal: PropTypes.number,
     setRegisteredAlertsTotal: PropTypes.func.isRequired,
-    triggeredAlertsTotal: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ])
+    triggeredAlertsTotal: PropTypes.number
   };
 
   componentDidMount() {
