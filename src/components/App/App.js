@@ -28,8 +28,8 @@ export default class App extends Component {
       >
         <h1>Current Weather and Forecast in {name}</h1>
         <UnitsSwitcher setUnits={this.setUnits} units={units} />
-        <CurrentWeather name={name} units={units} />
-        <FiveDayForecast name={name} units={units} />
+        <CurrentWeather units={units} />
+        <FiveDayForecast units={units} />
         <div
           style={{
             display: 'flex'

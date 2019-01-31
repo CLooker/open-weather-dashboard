@@ -5,7 +5,6 @@ import { IconAndText, Loading } from '../common';
 
 export default class CurrentWeather extends PureComponent {
   static propTypes = {
-    name: PropTypes.string.isRequired,
     units: PropTypes.string.isRequired
   };
 
@@ -111,8 +110,6 @@ export default class CurrentWeather extends PureComponent {
   };
 
   render() {
-    const { name } = this.props;
-
     if (this.getIsLoading()) return <Loading />;
 
     return (
@@ -128,7 +125,7 @@ export default class CurrentWeather extends PureComponent {
         }}
       >
         <div>
-          <h3>Current Weather in {name}</h3>
+          <h3>Current Weather</h3>
           {this.getCurrentWeatherComponents()}
         </div>
       </div>

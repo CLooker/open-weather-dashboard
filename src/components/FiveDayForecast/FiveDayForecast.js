@@ -13,7 +13,6 @@ import { IconAndText, Loading } from '../common';
 
 export default class forecasts extends PureComponent {
   static propTypes = {
-    name: PropTypes.string,
     units: PropTypes.string.isRequired
   };
 
@@ -171,7 +170,7 @@ export default class forecasts extends PureComponent {
   };
 
   render() {
-    const { name, units } = this.props;
+    const { units } = this.props;
     const { forecasts } = this.state;
 
     if (!forecasts.length) return <Loading />;
@@ -193,7 +192,7 @@ export default class forecasts extends PureComponent {
             padding: '0 0 10px'
           }}
         >
-          Forecast in {name}
+          Forecast
         </h3>
         <ul
           style={{
