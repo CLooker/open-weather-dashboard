@@ -88,6 +88,7 @@ export default class AirQualityReport extends PureComponent {
 
   render() {
     if (this.getIsLoading()) return <Loading />;
+
     return (
       <div
         style={{
