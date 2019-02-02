@@ -4,7 +4,7 @@
 
 # Quickstart
 
-Clone the repository, cd into the cloned directory, and run `npm i`. Once you've installed the dependencies, run `npm start` from now on.
+Clone the repository, `cd` into the cloned directory, and run `npm i`. Once you've installed the dependencies, run `npm start` from now on.
 
 # Context
 
