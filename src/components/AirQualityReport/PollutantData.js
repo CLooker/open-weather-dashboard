@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const PollutantReportWrapper = styled.div`
+const PollutantDataWrapper = styled.div`
   margin: 0 5px;
 `;
 
@@ -17,7 +17,7 @@ const DataTitleWrapper = styled.h5`
   padding: 0 2px 0 0;
 `;
 
-export default class PollutantReport extends PureComponent {
+export default class PollutantData extends Component {
   static propTypes = {
     pollutant: PropTypes.string,
     data: PropTypes.object
@@ -30,7 +30,7 @@ export default class PollutantReport extends PureComponent {
     } = this.props;
 
     return (
-      <PollutantReportWrapper>
+      <PollutantDataWrapper>
         <strong title='Pollutant'>{pollutant.toUpperCase()}</strong>
         <DataWrapper>
           <DataTitleWrapper title='Mixing Ratio'>Value:</DataTitleWrapper>
@@ -48,7 +48,7 @@ export default class PollutantReport extends PureComponent {
           </DataTitleWrapper>
           {precision}
         </DataWrapper>
-      </PollutantReportWrapper>
+      </PollutantDataWrapper>
     );
   }
 }

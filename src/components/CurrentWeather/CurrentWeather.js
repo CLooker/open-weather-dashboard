@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import thermometerIcon from '../../assets/thermometer.png';
+import windIcon from '../../assets/wind.png';
+import cloudIcon from '../../assets/cloud.png';
+import barometerIcon from '../../assets/barometer.png';
 import { apiKey, handleConversion, farenheit, celsius } from '../../utils';
 import { IconAndText, Loading } from '../common';
 
@@ -75,8 +79,7 @@ export default class CurrentWeather extends PureComponent {
       },
       {
         titleAttr: 'Current Temperature',
-        iconSrc:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVYTeX-IT8VF_M7yQQsClU2CQEJTXgoi8T9jaGhB66jpLWQSw',
+        iconSrc: thermometerIcon,
         text: (
           <h4>
             {temp.toFixed(1)} {units === 'F' ? farenheit : celsius}
@@ -85,18 +88,17 @@ export default class CurrentWeather extends PureComponent {
       },
       {
         titleAttr: 'Current Wind',
-        iconSrc: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLHQKHJiUm02mysUrvH8vaKDY-myNAYfRHCUFJgA-LSiNeOKn-`,
+        iconSrc: windIcon,
         text: <h4>{wind} mph</h4>
       },
       {
         titleAttr: 'Current Cloudiness',
-        iconSrc: 'https://openweathermap.org/img/w/03d.png',
+        iconSrc: cloudIcon,
         text: <h4>{clouds}%</h4>
       },
       {
         titleAttr: 'Current Barometric Pressure',
-        iconSrc:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe31uwyEa-r1R6ntqu4QPim6J6QQsIPqIrZ1RyEYebzC5esPGc',
+        iconSrc: barometerIcon,
         text: <h4>{pressure} hpa</h4>
       }
     ];

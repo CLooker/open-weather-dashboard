@@ -105,8 +105,8 @@ export default class CreateWeatherAlert extends Component {
       body: this.getReqBody()
     })
       .then(res => res.json())
-      .then(this.handleSubmitSuccess)
-      .catch(this.handleSubmitFailure);
+      .then(this.handleSubmitResponse)
+      .catch(this.handleSubmitResponse);
   };
 
   isValidInput = () => {
@@ -130,22 +130,23 @@ export default class CreateWeatherAlert extends Component {
     return isValidUnits;
   };
 
-  handleSubmitSuccess = async () => {
-    const { incrementRegisteredAlerts } = this.props;
+  handleSubmitResponse = response => {
+    const { incrementRegisteredAlertsTotal } = this.props;
 
-    await this.setState({ displayMessage: 'Success.' });
-    incrementRegisteredAlerts();
+    const isError = !response._id;
 
-    // make Success message disappear in 10 seconds
+    isError ? console.error(response) : incrementRegisteredAlertsTotal();
+
+    this.setState({
+      displayMessage: isError ? 'Something went wrong.' : 'Success.'
+    });
+
     setTimeout(
       () =>
         this.setState({ alertTemperature: '', displayMessage: '', units: '' }),
       10000
     );
   };
-
-  handleSubmitFailure = () =>
-    this.setState({ displayMessage: 'Something went wrong.' });
 
   render() {
     const { alertTemperature, displayMessage, units } = this.state;
