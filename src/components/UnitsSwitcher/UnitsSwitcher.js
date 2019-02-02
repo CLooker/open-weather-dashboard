@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import UnitsSwitcherInput from './UnitsSwitcherInput';
+
+const UnitsSwitcherWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+`;
 
 export default class UnitsSwitcher extends Component {
   static propTypes = {
@@ -13,15 +22,7 @@ export default class UnitsSwitcher extends Component {
   render() {
     const { units } = this.props;
     return (
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          margin: '20px'
-        }}
-      >
+      <UnitsSwitcherWrapper>
         <div>
           <UnitsSwitcherInput
             units={units}
@@ -34,7 +35,7 @@ export default class UnitsSwitcher extends Component {
             onClick={this.handleOnClick}
           />
         </div>
-      </div>
+      </UnitsSwitcherWrapper>
     );
   }
 }
