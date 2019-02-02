@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { farenheit } from '../../utils';
 import UnitsSwitcherInput from './UnitsSwitcherInput';
 
 const UnitsSwitcherWrapper = styled.div`
@@ -18,8 +17,7 @@ export default class UnitsSwitcher extends Component {
     units: PropTypes.string.isRequired
   };
 
-  handleClick = e =>
-    this.props.setUnits(e.target.value === farenheit ? 'F' : 'C');
+  handleOnClick = e => this.props.setUnits(e.target.value);
 
   render() {
     const { units } = this.props;
@@ -27,14 +25,14 @@ export default class UnitsSwitcher extends Component {
       <UnitsSwitcherWrapper>
         <div>
           <UnitsSwitcherInput
-            dashboardUnits={units}
-            inputUnits={'F'}
-            handleClick={this.handleClick}
+            units={units}
+            value={'F'}
+            onClick={this.handleOnClick}
           />
           <UnitsSwitcherInput
-            dashboardUnits={units}
-            inputUnits={'C'}
-            handleClick={this.handleClick}
+            units={units}
+            value={'C'}
+            onClick={this.handleOnClick}
           />
         </div>
       </UnitsSwitcherWrapper>

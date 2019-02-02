@@ -5,9 +5,7 @@ import moment from 'moment';
 import { apiKey } from '../../utils';
 import { IconAndText } from '../common';
 
-const CreateWeatherAlertWrapper = styled.div`
-  margin: 0 15px;
-`;
+const CreateWeatherAlertWrapper = styled.div``;
 
 const Wrapper = styled.div`
   display: flex;

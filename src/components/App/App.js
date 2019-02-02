@@ -15,6 +15,8 @@ const AppWrapper = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: space-around;
+  min-width: 927px;
 `;
 
 export default class App extends Component {
