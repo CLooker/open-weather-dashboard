@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { farenheit, celsius } from '../../utils';
+import styled from 'styled-components';
+
+const UnitsSwitcherInputWrapper = styled.input`
+  width: 50px;
+  opacity: ${props => (props.units === props.value ? '1' : '0.5')};
+`;
 
 export default class UnitsSwitcherInput extends Component {
   static propTypes = {
-    dashboardUnits: PropTypes.string.isRequired,
-    inputUnits: PropTypes.string.isRequired,
-    handleClick: PropTypes.func.isRequired
+    units: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired
   };
 
   render() {
-    const { dashboardUnits, inputUnits, handleClick } = this.props;
-
-    return (
-      <input
-        type='button'
-        value={inputUnits === 'F' ? farenheit : celsius}
-        style={{
-          width: '50px',
-          opacity: dashboardUnits === inputUnits ? '1' : '.5'
-        }}
-        onClick={handleClick}
-      />
-    );
+    return <UnitsSwitcherInputWrapper type='button' {...this.props} />;
   }
 }

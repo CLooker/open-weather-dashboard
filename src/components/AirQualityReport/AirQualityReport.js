@@ -7,7 +7,6 @@ import PollutantReport from './PollutantReport';
 const AirQualityReportWrapper = styled.div`
   border: solid 1px lightgrey;
   border-radius: 10px;
-  margin: 10px;
   padding: 15px 0 0;
 `;
 
