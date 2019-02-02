@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -17,7 +17,7 @@ const DataTitleWrapper = styled.h5`
   padding: 0 2px 0 0;
 `;
 
-export default class PollutantReport extends PureComponent {
+export default class PollutantReport extends Component {
   static propTypes = {
     pollutant: PropTypes.string,
     data: PropTypes.object

@@ -2,6 +2,11 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import moment from 'moment';
+import thermometerIcon from '../../assets/thermometer.png';
+import snowflakeIcon from '../../assets/snowflake.png';
+import windIcon from '../../assets/wind.png';
+import cloudIcon from '../../assets/cloud.png';
+import barometerIcon from '../../assets/barometer.png';
 import {
   apiKey,
   compose,
@@ -241,7 +246,7 @@ export default class FiveDayForecast extends PureComponent {
                   <br />
                   <ForecastIconAndText
                     titleAttr='High Temperature'
-                    iconSrc={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVYTeX-IT8VF_M7yQQsClU2CQEJTXgoi8T9jaGhB66jpLWQSw`}
+                    iconSrc={thermometerIcon}
                     text={`${high.toFixed(1)} ${
                       units === 'F' ? farenheit : celsius
                     }`}
@@ -250,7 +255,7 @@ export default class FiveDayForecast extends PureComponent {
                   <ForecastIconAndText
                     titleAttr='Low Temperature'
                     iconStyle={{ padding: '0 5px 0 0' }}
-                    iconSrc={`https://lh3.googleusercontent.com/umbUE_DTWWiYad0I1ZB38WcSBFSLzSYYgKSJwTdHnjHHpuTMfvMoGHEiv4iPolyY-A=w300`}
+                    iconSrc={snowflakeIcon}
                     text={`${low.toFixed(1)} ${
                       units === 'F' ? farenheit : celsius
                     }`}
@@ -259,20 +264,20 @@ export default class FiveDayForecast extends PureComponent {
                   <ForecastIconAndText
                     titleAttr='Wind'
                     iconStyle={{ padding: '0 5px 0 0' }}
-                    iconSrc={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLHQKHJiUm02mysUrvH8vaKDY-myNAYfRHCUFJgA-LSiNeOKn-`}
+                    iconSrc={windIcon}
                     text={`${wind} m/ph`}
                   />
                   <br />
                   <ForecastIconAndText
                     titleAttr='Cloudiness'
-                    iconSrc={`https://openweathermap.org/img/w/03d.png`}
+                    iconSrc={cloudIcon}
                     text={`${clouds.toFixed()}%`}
                   />
                   <br />
                   <ForecastIconAndText
                     titleAttr='Barometric Pressure'
                     iconStyle={{ padding: '0 5px 0 0' }}
-                    iconSrc={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe31uwyEa-r1R6ntqu4QPim6J6QQsIPqIrZ1RyEYebzC5esPGc`}
+                    iconSrc={barometerIcon}
                     text={`${pressure.toFixed()} hpa`}
                   />
                 </div>

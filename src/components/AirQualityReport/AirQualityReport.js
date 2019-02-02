@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+import factoryIcon from '../../assets/factory.jpg';
 import { apiKey } from '../../utils';
 import { IconAndText, Loading } from '../common';
 import PollutantReport from './PollutantReport';
@@ -71,7 +72,7 @@ export default class AirQualityReport extends PureComponent {
       <div>
         <IconAndTextWrapper
           alt='air quality report'
-          iconSrc='https://image.freepik.com/icones-gratis/fabrica-de-fumaca-eco_318-41523.jpg'
+          iconSrc={factoryIcon}
           text={<h3>Air Quality Report</h3>}
         />
       </div>
