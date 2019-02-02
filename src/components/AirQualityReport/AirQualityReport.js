@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import factoryIcon from '../../assets/factory.jpg';
 import { apiKey } from '../../utils';
 import { IconAndText, Loading } from '../common';
-import PollutantReport from './PollutantReport';
+import PollutantData from './PollutantData';
 
 const AirQualityReportWrapper = styled.div`
   border: solid 1px lightgrey;
@@ -79,8 +79,8 @@ export default class AirQualityReport extends PureComponent {
     );
   };
 
-  getPollutantReports = () => {
-    const PollutantReportsWrapper = styled.div`
+  getPollutantData = () => {
+    const PollutantDataWrapper = styled.div`
       list-style-type: none;
       display: flex;
       justify-content: center;
@@ -88,18 +88,14 @@ export default class AirQualityReport extends PureComponent {
     `;
 
     return (
-      <PollutantReportsWrapper>
+      <PollutantDataWrapper>
         {Object.entries(this.state).map(entry => {
           const [pollutant, data] = entry;
           return (
-            <PollutantReport
-              key={pollutant}
-              pollutant={pollutant}
-              data={data}
-            />
+            <PollutantData key={pollutant} pollutant={pollutant} data={data} />
           );
         })}
-      </PollutantReportsWrapper>
+      </PollutantDataWrapper>
     );
   };
 
@@ -109,7 +105,7 @@ export default class AirQualityReport extends PureComponent {
     return (
       <AirQualityReportWrapper>
         {this.getAirQualityReportIconAndText()}
-        {this.getPollutantReports()}
+        {this.getPollutantData()}
       </AirQualityReportWrapper>
     );
   }
