@@ -1,6 +1,6 @@
 # Deployed Site
 
-<a href="https://clooker.github.io/open-weather-dashboard/" > OpenWeather Rome Dashboard </a>
+<a href="https://clooker.github.io/open-weather-dashboard/" > Open Weather Dashboard </a>
 
 # Quickstart
 
