@@ -6,10 +6,9 @@
   "dependencies": {
     "enzyme-adapter-react-16": "^1.1.1",
     "moment": "^2.21.0",
-    "prop-types": "^15.6.1",
+    "prop-types": "^15.6.2",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "styled-components": "^4.1.3"
+    "react-dom": "^16.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,27 +20,31 @@
     "deploy": "yarn run build&&gh-pages -d build"
   },
   "devDependencies": {
-    "babel-jest": "^23.6.0",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/polyfill": "^7.2.5",
     "babel-plugin-styled-components": "^1.10.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "enzyme": "^3.3.0",
-    "es2015": "0.0.0",
-    "fetch-mock": "^7.2.5",
     "gh-pages": "^2.0.1",
+    "jest-cli": "^24.0.0",
+    "jest-fetch-mock": "^2.1.0",
     "postcss": "^7.0.6",
-    "react-scripts": "^2.1.3"
+    "react-scripts": "^2.1.3",
+    "styled-components": "^4.1.3"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/config/jest/setupTests.js"
+    ],
     "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "jest-transform-css",
-      "\\.(jpg)$": "<rootDir>/src/__mocks__/fileMock.js"
+      "\\.(css|sass|scss)$": "<rootDir>/src/config/jest/__mocks__/styleMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/config/jest/__mocks__/fileMock.js"
     },
-    "testURL": "http://localhost",
-    "verbose": true
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build/"
+    ]
   },
   "browserslist": [
     ">0.2%",
