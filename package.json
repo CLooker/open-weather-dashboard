@@ -22,6 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/polyfill": "^7.2.5",
     "babel-plugin-styled-components": "^1.10.0",
     "enzyme": "^3.3.0",
     "gh-pages": "^2.0.1",
@@ -34,11 +35,11 @@
   "jest": {
     "verbose": true,
     "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.js"
+      "<rootDir>/src/config/jest/setupTests.js"
     ],
     "moduleNameMapper": {
-      "\\.(css|sass|scss)$": "<rootDir>/src/__mocks__/styleMock.js",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js"
+      "\\.(css|sass|scss)$": "<rootDir>/src/config/jest/__mocks__/styleMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/config/jest/__mocks__/fileMock.js"
     },
     "testPathIgnorePatterns": [
       "/node_modules/",
