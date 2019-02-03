@@ -20,21 +20,13 @@ const Wrapper = styled.div`
 `;
 
 export default class App extends Component {
-  state = {
-    units: 'F'
-  };
-
-  setUnits = units => this.setState({ units });
-
   render() {
-    const { units } = this.state;
-
     return (
       <AppWrapper>
         <h1>Current Weather and Forecast in Rome</h1>
-        <UnitsSwitcher setUnits={this.setUnits} units={units} />
-        <CurrentWeather units={units} />
-        <FiveDayForecast units={units} />
+        <UnitsSwitcher />
+        <CurrentWeather />
+        <FiveDayForecast />
         <Wrapper>
           <WeatherAlerts />
           <AirQualityReport />
