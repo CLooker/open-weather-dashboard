@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import UnitsSwitcherInput from './UnitsSwitcherInput';
 
@@ -12,28 +11,12 @@ const UnitsSwitcherWrapper = styled.div`
 `;
 
 export default class UnitsSwitcher extends Component {
-  static propTypes = {
-    setUnits: PropTypes.func.isRequired,
-    units: PropTypes.string.isRequired
-  };
-
-  handleOnClick = e => this.props.setUnits(e.target.value);
-
   render() {
-    const { units } = this.props;
     return (
       <UnitsSwitcherWrapper>
         <div>
-          <UnitsSwitcherInput
-            units={units}
-            value={'F'}
-            onClick={this.handleOnClick}
-          />
-          <UnitsSwitcherInput
-            units={units}
-            value={'C'}
-            onClick={this.handleOnClick}
-          />
+          <UnitsSwitcherInput value={'F'} />
+          <UnitsSwitcherInput value={'C'} />
         </div>
       </UnitsSwitcherWrapper>
     );

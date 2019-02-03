@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import moment from 'moment';
 import thermometerIcon from '../../assets/thermometer.png';
@@ -16,6 +17,7 @@ import {
   farenheit
 } from '../../utils';
 import { IconAndText, Loading } from '../common';
+import { getUnits } from '../../state/selectors';
 
 const FiveDayForecastWrapper = styled.div`
   display: flex;
@@ -54,7 +56,7 @@ const ForecastIconAndText = styled(IconAndText)`
   align-items: center;
 `;
 
-export default class FiveDayForecast extends PureComponent {
+class FiveDayForecast extends PureComponent {
   static propTypes = {
     units: PropTypes.string.isRequired
   };
@@ -290,3 +292,5 @@ export default class FiveDayForecast extends PureComponent {
     );
   }
 }
+
+export default connect(getUnits)(FiveDayForecast);

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import thermometerIcon from '../../assets/thermometer.png';
 import windIcon from '../../assets/wind.png';
@@ -7,6 +8,7 @@ import cloudIcon from '../../assets/cloud.png';
 import barometerIcon from '../../assets/barometer.png';
 import { apiKey, handleConversion, farenheit, celsius } from '../../utils';
 import { IconAndText, Loading } from '../common';
+import { getUnits } from '../../state/selectors';
 
 const CurrentWeatherWrapper = styled.div`
   display: flex;
@@ -18,7 +20,7 @@ const CurrentWeatherWrapper = styled.div`
   text-align: center;
 `;
 
-export default class CurrentWeather extends PureComponent {
+class CurrentWeather extends PureComponent {
   static propTypes = {
     units: PropTypes.string.isRequired
   };
@@ -140,3 +142,5 @@ export default class CurrentWeather extends PureComponent {
     );
   }
 }
+
+export default connect(getUnits)(CurrentWeather);
