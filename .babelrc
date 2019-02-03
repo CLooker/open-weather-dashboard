@@ -1,4 +1,7 @@
 {
-  "presets": ["stage-0", "env", "react"],
-  "plugins": ["transform-class-properties", "babel-plugin-styled-components"]
+  "presets": [["@babel/env", { "modules": "auto" }], "@babel/react"],
+  "plugins": [
+    "babel-plugin-styled-components",
+    "@babel/plugin-proposal-class-properties"
+  ]
 }
