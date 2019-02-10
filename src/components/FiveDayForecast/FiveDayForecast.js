@@ -17,7 +17,7 @@ import {
   farenheit
 } from '../../utils';
 import { IconAndText, Loading } from '../common';
-import { getUnits } from '../../state/selectors';
+import { getUnits } from '../../redux/modules/units';
 
 const FiveDayForecastWrapper = styled.div`
   display: flex;
