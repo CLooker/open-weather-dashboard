@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { getUnits, setUnits } from '../../redux/modules/units';
 
-console.log(getUnits);
-
 const UnitsSwitcherInputWrapper = styled.input`
   width: 50px;
   opacity: ${props => (props.units === props.value ? '1' : '0.5')};
@@ -20,7 +18,6 @@ class UnitsSwitcherInput extends PureComponent {
 
   render() {
     const { setUnits, units, value } = this.props;
-    console.log(this.props);
 
     return (
       <UnitsSwitcherInputWrapper
