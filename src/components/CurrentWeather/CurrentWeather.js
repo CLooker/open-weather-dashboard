@@ -8,7 +8,7 @@ import cloudIcon from '../../assets/cloud.png';
 import barometerIcon from '../../assets/barometer.png';
 import { apiKey, handleConversion, farenheit, celsius } from '../../utils';
 import { IconAndText, Loading } from '../common';
-import { getUnits } from '../../state/selectors';
+import { getUnits } from '../../redux/modules/units';
 
 const CurrentWeatherWrapper = styled.div`
   display: flex;
