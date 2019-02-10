@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { store } from './state';
+import configureStore from './redux/configureStore';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import GlobalStyle from './theme/GlobalStyle';
 
 render(
-  <Provider store={store}>
+  <Provider store={configureStore()}>
     <Fragment>
       <GlobalStyle />
       <App />

@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { setUnits } from '../../state/actions/units';
-import { getUnits } from '../../state/selectors';
+import { getUnits, setUnits } from '../../redux/modules/units';
+
+console.log(getUnits);
 
 const UnitsSwitcherInputWrapper = styled.input`
   width: 50px;
@@ -19,6 +20,7 @@ class UnitsSwitcherInput extends PureComponent {
 
   render() {
     const { setUnits, units, value } = this.props;
+    console.log(this.props);
 
     return (
       <UnitsSwitcherInputWrapper
