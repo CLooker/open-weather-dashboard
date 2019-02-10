@@ -9,11 +9,7 @@ export const getUnits = ({ units }) => ({ units });
 
 const initialState = 'F';
 
-export default function reducer(state = initialState, action) {
-  switch (action.type) {
-    case SET_UNITS:
-      return { ...state, units: action.units };
-    default:
-      return state;
-  }
-}
+const reducer = (state = initialState, { type, units }) =>
+  type === SET_UNITS ? units : state;
+
+export default reducer;
