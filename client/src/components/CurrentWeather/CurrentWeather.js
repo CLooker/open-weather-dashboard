@@ -6,7 +6,7 @@ import thermometerIcon from '../../assets/thermometer.png';
 import windIcon from '../../assets/wind.png';
 import cloudIcon from '../../assets/cloud.png';
 import barometerIcon from '../../assets/barometer.png';
-import { apiKey, handleConversion, farenheit, celsius } from '../../utils';
+import { handleConversion, farenheit, celsius } from '../../utils';
 import { IconAndText, Loading } from '../common';
 import { getUnits } from '../../redux/modules/units';
 
@@ -43,9 +43,7 @@ class CurrentWeather extends PureComponent {
         pressure: res.main.pressure
       });
 
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Rome&units=imperial&APPID=${apiKey}`
-    )
+    fetch('api/current')
       .then(res => res.json())
       .then(handleResponse)
       .catch(console.error);
