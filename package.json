@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/CLooker/open-weather-dashboard#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
     "dotenv": "^6.2.0"
