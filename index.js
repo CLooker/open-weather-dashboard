@@ -1,7 +1,7 @@
+if (!process.env.NODE_ENV) require('dotenv').config();
 const express = require('express');
 const fetch = require('node-fetch');
 const path = require('path');
-if (!process.env.NODE_ENV) require('dotenv').config();
 const router = express.Router();
 const { apiKey } = process.env;
 
