@@ -9,7 +9,6 @@ import windIcon from '../../assets/wind.png';
 import cloudIcon from '../../assets/cloud.png';
 import barometerIcon from '../../assets/barometer.png';
 import {
-  apiKey,
   compose,
   getAverage,
   handleConversion,
@@ -66,9 +65,7 @@ class FiveDayForecast extends PureComponent {
   };
 
   componentDidMount() {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?id=6539761&units=imperial&APPID=${apiKey}`
-    )
+    fetch(`api/forecast`)
       .then(res => res.json())
       .then(this.handleResponse)
       .catch(console.error);
