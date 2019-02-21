@@ -1,0 +1,14 @@
+{
+  "main.js": "/open-weather-dashboard/static/js/main.869a4cc2.chunk.js",
+  "main.js.map": "/open-weather-dashboard/static/js/main.869a4cc2.chunk.js.map",
+  "static/js/1.937c2a6f.chunk.js": "/open-weather-dashboard/static/js/1.937c2a6f.chunk.js",
+  "static/js/1.937c2a6f.chunk.js.map": "/open-weather-dashboard/static/js/1.937c2a6f.chunk.js.map",
+  "runtime~main.js": "/open-weather-dashboard/static/js/runtime~main.51279223.js",
+  "runtime~main.js.map": "/open-weather-dashboard/static/js/runtime~main.51279223.js.map",
+  "static/media/factory.jpg": "/open-weather-dashboard/static/media/factory.d6feacf2.jpg",
+  "static/media/snowflake.png": "/open-weather-dashboard/static/media/snowflake.e0d1ec8e.png",
+  "static/media/alert.jpg": "/open-weather-dashboard/static/media/alert.87c0af42.jpg",
+  "index.html": "/open-weather-dashboard/index.html",
+  "precache-manifest.572b4127908899158d9d283bed1df6e5.js": "/open-weather-dashboard/precache-manifest.572b4127908899158d9d283bed1df6e5.js",
+  "service-worker.js": "/open-weather-dashboard/service-worker.js"
+}
