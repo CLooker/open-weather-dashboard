@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "open-weather-dashboard server",
   "engines": {
-    "node": "11.9.0"
+    "node": "11.9.0",
+    "npm": "6.5.0"
   },
   "main": "index.js",
   "scripts": {

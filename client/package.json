@@ -2,6 +2,9 @@
   "name": "open-weather-dashboard",
   "version": "1.0.0",
   "proxy": "http://localhost:8080",
+  "engines": {
+    "npm": "6.5.0"
+  },
   "dependencies": {
     "enzyme-adapter-react-16": "^1.1.1",
     "moment": "^2.21.0",
