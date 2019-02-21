@@ -2,6 +2,9 @@
   "name": "open-weather-dashboard",
   "version": "1.0.0",
   "description": "open-weather-dashboard server",
+  "engines": {
+    "node": "11.9.0"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node index",
