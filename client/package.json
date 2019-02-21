@@ -1,8 +1,9 @@
 {
   "name": "open-weather-dashboard",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://clooker.github.io/open-weather-dashboard",
+  "version": "1.0.0",
+  "engines": {
+    "node": "11.9.0"
+  },
   "dependencies": {
     "enzyme-adapter-react-16": "^1.1.1",
     "moment": "^2.21.0",
