@@ -1,10 +1,10 @@
 # Deployed Site
 
-<a href="https://clooker.github.io/open-weather-dashboard/" > Open Weather Dashboard </a>
+<a href="https://lit-ridge-37329.herokuapp.com/" > Open Weather Dashboard </a>
 
 # Quickstart
 
-Clone the repository, `cd` into the cloned directory, and run `npm i`. Once you've installed the dependencies, run `npm start` from now on.
+Clone the repository, `cd` into the cloned directory, and run `npm i && cd client && npm i && npm run build && cd ..`. Once you've installed the dependencies, run `npm start`.
 
 # Context
 
