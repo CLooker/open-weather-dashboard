@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import factoryIcon from '../../assets/factory.jpg';
-import { apiKey } from '../../utils';
 import { IconAndText, Loading } from '../common';
 import PollutantData from './PollutantData';
 
@@ -25,35 +24,10 @@ export default class AirQualityReport extends PureComponent {
     }
   };
 
-  componentDidMount() {
-    Object.keys(this.state).forEach(pollutant => {
-      fetch(
-        `https://api.openweathermap.org/pollution/v1/${pollutant}/41,12/current.json?appid=${apiKey}`
-      )
-        .then(res => res.json())
-        .then(res => {
-          const { data } = res;
-          const { length } = data;
-
-          if (!data || !length) return;
-
-          const accumulatedData = data.reduce(
-            (accumulatedData, dataObj) => ({
-              precision: accumulatedData.precision + dataObj.precision,
-              pressure: accumulatedData.pressure + dataObj.pressure,
-              value: accumulatedData.value + dataObj.value
-            }),
-            this.state[pollutant]
-          );
-          const averagedData = {
-            precision: accumulatedData.precision / length,
-            pressure: accumulatedData.pressure / length,
-            value: accumulatedData.value / length
-          };
-          this.setState({ [pollutant]: averagedData });
-        })
-        .catch(console.err);
-    });
+  async componentDidMount() {
+    const res = await fetch(`api/pollution`);
+    const pollutants = await res.json();
+    this.setState(pollutants);
   }
 
   getIsLoading = () =>

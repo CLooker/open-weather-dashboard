@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { apiKey } from '../../utils';
 
 const GetWeatherAlertsWrapper = styled.div`
   margin: 0 5px;
@@ -24,7 +23,7 @@ export default class GetWeatherAlerts extends Component {
       setRegisteredAlertsTotal
     } = this.props;
 
-    fetch(`https://api.openweathermap.org/data/3.0/triggers?&APPID=${apiKey}`)
+    fetch(`api/alerts`)
       .then(res => res.json())
       .then(res => {
         setRegisteredAlertsTotal(res.length);

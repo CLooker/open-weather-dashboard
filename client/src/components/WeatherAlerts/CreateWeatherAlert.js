@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import moment from 'moment';
-import { apiKey } from '../../utils';
 import { IconAndText } from '../common';
 
 const CreateWeatherAlertWrapper = styled.div``;
@@ -95,13 +94,10 @@ export default class CreateWeatherAlert extends Component {
 
     if (!this.isValidInput()) return;
 
-    await this.setState({ displayMessage: '' });
+    this.setState({ displayMessage: '' });
 
-    fetch(`https://api.openweathermap.org/data/3.0/triggers?&APPID=${apiKey}`, {
+    fetch(`api/alerts`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
       body: this.getReqBody()
     })
       .then(res => res.json())
