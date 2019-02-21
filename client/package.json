@@ -22,8 +22,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "eject": "react-scripts eject",
-    "deploy": "yarn run build&&gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -32,7 +31,6 @@
     "babel-jest": "^23.6.0",
     "babel-plugin-styled-components": "^1.10.0",
     "enzyme": "^3.3.0",
-    "gh-pages": "^2.0.1",
     "jest-cli": "^24.0.0",
     "jest-fetch-mock": "^2.1.0",
     "postcss": "^7.0.6",
