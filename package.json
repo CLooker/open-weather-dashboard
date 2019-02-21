@@ -1,62 +1,28 @@
 {
   "name": "open-weather-dashboard",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://clooker.github.io/open-weather-dashboard",
-  "dependencies": {
-    "enzyme-adapter-react-16": "^1.1.1",
-    "moment": "^2.21.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-redux": "^6.0.0",
-    "redux": "^4.0.1"
+  "version": "1.0.0",
+  "description": "open-weather-dashboard server",
+  "engines": {
+    "node": "11.9.0",
+    "npm": "6.5.0"
   },
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "eject": "react-scripts eject",
-    "deploy": "yarn run build&&gh-pages -d build"
+    "start": "node index",
+    "heroku-postbuild": "cd client && npm i --production && npm run build"
   },
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.3.0",
-    "@babel/polyfill": "^7.2.5",
-    "babel-jest": "^23.6.0",
-    "babel-plugin-styled-components": "^1.10.0",
-    "enzyme": "^3.3.0",
-    "gh-pages": "^2.0.1",
-    "jest-cli": "^24.0.0",
-    "jest-fetch-mock": "^2.1.0",
-    "postcss": "^7.0.6",
-    "react-scripts": "^2.1.3",
-    "styled-components": "^4.1.3",
-    "terser": "3.14.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CLooker/open-weather-dashboard.git"
   },
-  "resolutions": {
-    "terser": "3.14.1"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CLooker/open-weather-dashboard/issues"
   },
-  "jest": {
-    "verbose": true,
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/config/jest/setupTests.js"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|sass|scss)$": "<rootDir>/src/config/jest/__mocks__/styleMock.js",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/config/jest/__mocks__/fileMock.js"
-    },
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/build/"
-    ]
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "homepage": "https://github.com/CLooker/open-weather-dashboard#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
