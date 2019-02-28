@@ -96,13 +96,21 @@ export default class CreateWeatherAlert extends Component {
 
     this.setState({ displayMessage: '' });
 
-    fetch(`api/alerts`, {
-      method: 'POST',
-      body: this.getReqBody()
-    })
-      .then(res => res.json())
-      .then(this.handleSubmitResponse)
-      .catch(this.handleSubmitResponse);
+    try {
+      let res = await fetch(`api/alerts`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: this.getReqBody()
+      });
+
+      res = await res.json();
+
+      this.handleSubmitResponse(res);
+    } catch (e) {
+      this.handleSubmitResponse(e);
+    }
   };
 
   isValidInput = () => {

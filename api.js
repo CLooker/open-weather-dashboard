@@ -13,20 +13,25 @@ router.get('/alerts', async (req, res) => {
 });
 
 router.post('/alerts', async (req, res) => {
-  const resp = await fetch(
-    `https://api.openweathermap.org/data/3.0/triggers?&APPID=${apiKey}`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: req.body
-    }
-  );
+  try {
+    const resp = await fetch(
+      `https://api.openweathermap.org/data/3.0/triggers?&APPID=${apiKey}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(req.body)
+      }
+    );
 
-  const data = await resp.json();
+    const data = await resp.json();
 
-  res.send(data);
+    res.send(data);
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
 });
 
 router.get('/pollution', async (req, res) => {
@@ -48,9 +53,9 @@ router.get('/pollution', async (req, res) => {
       `https://api.openweathermap.org/pollution/v1/${pollutant}/41,12/current.json?appid=${apiKey}`
     );
 
-    const json = await resp.json();
+    const respObj = await resp.json();
 
-    const { data } = json;
+    const { data } = respObj;
     const { length } = data;
 
     const accumulatedData = data.reduce(
